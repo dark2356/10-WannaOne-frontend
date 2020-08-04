@@ -1,0 +1,76 @@
+.SignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 1200px;
+  padding: 64px 344px;
+  
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 492px;
+
+    form {
+      width: 100%;
+    }
+    
+    .title, 
+    .userName,
+    .userEmail,
+    .userPhoneNumber,
+    .userPassword,
+    .userPasswordValidation,
+    .signUpBtn {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    .title {
+      margin: 16px 0 48px;
+      font-size: 32px;
+    }
+
+    .agreedTermsBox, .agreedEventBox {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    
+      label {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-weight: bold;
+        color: rgb(69, 159, 191);
+        text-decoration: underline;
+      }
+    }
+
+    .signUpBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255, 146, 43);
+      color: rgb(255, 255, 255);
+      transition: background-color 100ms;
+      font-size: 16px;
+      margin-top: 16px;
+      height: 48px;
+
+      &:hover {
+        background-color: rgb(247, 120, 0);
+      }
+    } 
+
+    hr {
+      width: 100%;
+      margin-bottom: 20px 0px;
+      border-style: none none solid;
+      border-bottom: 1px solid rgba(16, 22, 26, 0.15);
+    }
+  }
+}
