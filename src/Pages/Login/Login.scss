@@ -1,0 +1,103 @@
+.loginWrapper {
+  display: flex;
+
+  .loginBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 24px;
+    flex: 0.88 1 0%;
+    min-height: 100vh;
+
+    .loginHeader {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      padding: 81px 24px 0px;
+      margin: 0px 0px 10px;
+      color: rgb(24, 32, 38);
+      line-height: 40px;
+
+      .loginHeaderBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 376px;
+
+        a {
+          display: inline-flex;
+          margin-left: 2px;
+          color: inherit;
+          cursor: pointer;
+
+          svg {
+            width: 95px;
+            height: 100%;
+            fill: none;
+            overflow: hidden;
+          }
+        }
+      }
+
+      .languageSelectBox {
+        path {
+          fill: rgb(168, 174, 179);
+        }
+
+        span {
+          color: rgb(168, 174, 179);
+        }
+      }
+    }
+
+    .loginTitleWrapper {
+      display: flex;
+      flex-direction: column;
+      width: 376px;
+
+      .loginTitleBox {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 40px;
+
+        h2 {
+          margin: 0 0 10px;
+          font-weight: bold;
+          font-size: 32px;
+          line-height: 44px;
+          color: rgb(62, 64, 66);
+        }
+      }
+    }
+
+    .btn {
+      display: flex;
+      width: 100%;
+      height: 48px;
+      font-size: 16px;
+      font-weight: 700;
+      vertical-align: middle;
+      border-radius: 3px;
+
+      &.kakao {
+        margin-bottom: 8px;
+        background-color: rgb(255, 232, 18) !important;
+
+        &:hover {
+          background-color: #fcd732 !important;
+        }
+      }
+    }
+  }
+
+  .loginImgBox {
+    flex: 1 1 0%;
+    background-image: url(/images/login-bg.png);
+    background-size: cover;
+  }
+}
