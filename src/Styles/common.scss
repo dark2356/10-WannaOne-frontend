@@ -7,3 +7,8 @@ li {
 a {
   text-decoration: none;
 }
+
+::selection {
+  background-color: rgb(255, 89, 70) !important;
+  color: rgb(255, 255, 255) !important;
+}

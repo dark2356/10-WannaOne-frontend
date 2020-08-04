@@ -1,0 +1,202 @@
+.LoginInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 24px;
+  flex: 0.88 1 0%;
+  min-height: 100vh;
+
+  .loginHeader {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 81px 24px 0px;
+    margin: 0px 0px 10px;
+    color: rgb(24, 32, 38);
+    line-height: 40px;
+
+    .loginHeaderBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 376px;
+
+      a {
+        display: inline-flex;
+        margin-left: 2px;
+        color: inherit;
+        cursor: pointer;
+
+        svg {
+          width: 95px;
+          height: 100%;
+          fill: none;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .languageSelectBox {
+      path {
+        fill: rgb(168, 174, 179);
+      }
+
+      span {
+        color: rgb(168, 174, 179);
+      }
+    }
+  }
+
+  .loginInputWrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 376px;
+    width: 100%;
+
+    .inputBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin-bottom: 8px;
+
+      h2 {
+        margin: 0 0 10px;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 44px;
+        color: rgb(62, 64, 66);
+      }
+    }
+
+    h6 {
+      margin-bottom: 12px;
+    }
+
+    label {
+      margin-top: 12px;
+    }
+
+    .signUpBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 16px 0;
+
+      a {
+        font-size: 11px;
+        line-height: 16px;
+        color: rgb(168, 174, 179);
+      }
+    }
+
+    .loginBtn {
+      display: flex;
+      max-width: 376px;
+      height: 48px;
+      font-size: 16px;
+      font-weight: 700;
+      vertical-align: middle;
+      border-radius: 3px;
+    }
+
+    .divider {
+      margin: 16px 0;
+      border-bottom: 1px solid rgb(237, 239, 240);
+    }
+  }
+
+  .btn {
+    display: flex;
+    max-width: 376px;
+    height: 48px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 3px;
+
+    .btnText {
+      margin-top: 4px;
+    }
+
+    &.kakao {
+      margin-bottom: 8px;
+      background-color: rgb(255, 232, 18) !important;
+
+      &:hover {
+        background-color: #fcd732 !important;
+      }
+    }
+
+    &.naver {
+      background-color: rgb(0, 199, 60) !important;
+      color: #fff;
+
+      &:hover {
+        filter: brightness(97%);
+      }
+    }
+
+    &.facebook {
+      background-color: rgb(24, 119, 242) !important;
+      color: #fff;
+
+      &:hover {
+        filter: brightness(97%);
+      }
+    }
+
+    &.google {
+      background-color: rgb(248, 248, 249) !important;
+
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+
+    &.apple {
+      margin-bottom: 16px;
+      background-color: rgb(0, 0, 0) !important;
+      color: #fff;
+
+      &:hover {
+        filter: brightness(97%);
+      }
+    }
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      margin-right: 4px;
+      flex: 0 0 auto;
+      font-size: 0px;
+
+      img {
+        width: 100%;
+      }
+
+      .applePath {
+        fill: #fff;
+      }
+    }
+  }
+
+  .loginFooter {
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+    white-space: pre;
+    color: rgb(168, 174, 179);
+
+    a {
+      color: rgb(42, 143, 180);
+    }
+  }
+}
