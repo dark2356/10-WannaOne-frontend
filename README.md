@@ -14,18 +14,18 @@
 
 ### 10기 신영재
 
-- [] 로그인 페이지
-- [] Sass Nesting
+- [ ] 로그인 페이지
+- [ ] Sass Nesting
 
 ### 10기 배정규
 
-- [] 회원가입 페이지
-- [] Sass Nesting
+- [ ] 회원가입 페이지
+- [ ] Sass Nesting
 
 ### 10기 이윤식
 
-- [] Navigation bar
-- [] Sass Nesting
+- [ ] Navigation bar
+- [ ] Sass Nesting
 
 ## 작업순서
 
