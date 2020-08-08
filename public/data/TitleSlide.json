@@ -1,0 +1,39 @@
+{
+  "signature": [
+    {
+      "id": 5,
+      "description": "메이크업 클래스",
+      "name": "함경식",
+      "category": "살롱드 기프트",
+      "imgsrc": "https://cdn.class101.net/images/f05a8de3-a8ae-4d3b-b46f-5cfe4225ca3a"
+    },
+    {
+      "id": 4,
+      "description": "옴브레 염색 클레스",
+      "name": "묘정",
+      "category": "헤어 디자이너",
+      "imgsrc": "https://cdn.class101.net/images/6c0e1bf4-2ed1-48c5-82f5-f5b7024f725d"
+    },
+    {
+      "id": 3,
+      "description": "댄스 클래스",
+      "name": "저스트절크",
+      "category": "안무가",
+      "imgsrc": "https://cdn.class101.net/images/e5b18fdb-5962-4e13-8c80-4f9903df820d"
+    },
+    {
+      "id": 2,
+      "description": "지옥 헬스 PT 클래스",
+      "name": "양치승",
+      "category": "트레이너",
+      "imgsrc": "https://cdn.class101.net/images/af4740ab-a8b2-4510-ab65-09a4651faa70"
+    },
+    {
+      "id": 1,
+      "description": "나만의 이야기, 색 그리고 음악",
+      "name": "그레이",
+      "category": "프로듀서",
+      "imgsrc": "https://cdn.class101.net/images/d90e07d8-a8a3-497a-8797-2b7b6b8d56ae"
+    }
+  ]
+}

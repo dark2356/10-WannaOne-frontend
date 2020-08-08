@@ -1,0 +1,65 @@
+.OpenSignatureClass {
+  width: 33%;
+  position: relative;
+  margin: 0px 3px 32px 0px;
+  padding: 0 12px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+
+  .cardClassImg {
+    width: 376px;
+    height: 282px;
+  }
+
+  .cardClassHeartContainer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    &:hover {
+      background-color: #808080;
+      border-radius: 20px;
+    }
+  }
+  .cardClassCategory {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .cardClassIconFlex {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    margin-top: 25px;
+
+    .cardClassIcon {
+      width: 12px;
+      height: 12px;
+      margin-right: 4px;
+    }
+
+    .cardClassIconlike {
+      width: 15px;
+      height: 15px;
+      margin: 0px 2px 0px 2px;
+    }
+  }
+
+  .ProductStateLabel {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 3px;
+    min-width: 20px;
+    height: 20px;
+    background-color: rgb(61, 64, 66);
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-top: 10px;
+
+    .ProductState {
+      font-size: 10px;
+      color: #f33340;
+    }
+  }
+}
