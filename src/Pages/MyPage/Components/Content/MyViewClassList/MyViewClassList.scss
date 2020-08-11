@@ -1,0 +1,51 @@
+.MyViewClassList {
+
+  .classCardContainer {
+    width: 100%;
+    max-width: 1176px;
+    margin: 0 auto;
+ 
+    .openClassTitle {
+      font-size: 24px;
+      color: rgb(27, 28, 29);
+      margin-bottom: 24px;
+    }
+    .cardClassContainer {
+      display: flex;
+      position: relative;
+      width: 776px;
+      height: 400px;
+
+      .slick-slider {
+        width: 100%;
+        height: 100%;
+
+        .slick-prev {
+          position: absolute;
+          top: -35px;
+          margin-left: 730px;
+
+          &:before {
+            content: "<";
+            color: black;;
+            font-size: 30px;
+            font-weight: 600;
+          }
+        }
+
+        .slick-next {
+          position: absolute;
+          top: -35px;
+          margin-right: 41px;
+
+          &:before {
+            content: ">";
+            color: black;;
+            font-size: 30px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

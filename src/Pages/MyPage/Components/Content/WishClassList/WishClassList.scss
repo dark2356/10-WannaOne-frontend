@@ -1,0 +1,29 @@
+.WishClassList {
+  margin-top: 50px;
+
+  .classCardContainer {
+    max-width: 1176px;
+    margin: 0 auto;
+    height: 100%;
+
+    .openClassTitle {
+      font-size: 24px;
+      color: rgb(27, 28, 29);
+      margin-bottom: 24px;
+    }
+    .cardClassContainer {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  .swiperContainer {
+    max-width: 1176px;
+    margin: 50px auto;
+  }
+  .hitClassTitle {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+  }
+}
