@@ -9,9 +9,11 @@ function MyPageNav({ color, background, backgroundColor }) {
     <div className="MyPageNav" style={{ background }}>
       <div className="mainHaeder">
         <div className="haederLeft">
-          <div className="mainLogo" style={{ color }}>
-            CLASS1O1
-          </div>
+          <Link to="/">
+            <div className="mainLogo" style={{ color }}>
+              CLASS1O1
+            </div>
+          </Link>
           <div className="searchController" style={{ backgroundColor }}>
             <input
               type="search"

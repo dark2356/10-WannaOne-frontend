@@ -17,7 +17,7 @@ function Recommend({ focusTarget }) {
 
   const [classData, setClassData] = useState([]);
   useEffect(() => {
-    axios.get(`${WISH_CLASS_MOCK_URL}`).then((res) => {
+    axios.get(`${WISH_CLASS_API_URL}`).then((res) => {
       setClassData(res.data.data);
     });
   }, []);

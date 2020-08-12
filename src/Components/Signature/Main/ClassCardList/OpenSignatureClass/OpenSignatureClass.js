@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { Icon, Colors, Card } from "@class101/ui";
 import "./OpenSignatureClass.scss";
+import { SIGNATURE_WISH_API_URL } from "../../../../../Config.js";
 
 function OpenSignatureClass({
+  dipStatus,
+  product_id,
   image_src,
   creator,
   name,
@@ -11,8 +14,21 @@ function OpenSignatureClass({
   start_date,
   like,
 }) {
+
+  const [isWishAdd, setIsWishAdd] = useState(false)
+  const wishAddHandler = () => {
+    setIsWishAdd(!isWishAdd)
+    fetch(`${SIGNATURE_WISH_API_URL}`, {
+      method: "POST",
+      body: JSON.stringify({
+        user_id: 8,
+        product_id,
+        dipStatus
+      })
+    })
+  }
   return (
-    <section className="OpenSignatureClass">
+    <section className="OpenSignatureClass" product_id={product_id} dipStatus={dipStatus}>
       <span>
         <Card
           title="아이패드 드로잉"
@@ -20,10 +36,10 @@ function OpenSignatureClass({
           to={"/"}
           external
         />
-        <div className="cardClassHeartContainer">
-          <Icon.HeartOutline
+        <div className="cardClassHeartContainer" onClick={wishAddHandler}>
+          <Icon.Heart
             fillColor={Colors.white}
-            className="cardClassHeart"
+            fill className={isWishAdd && dipStatus ? "onIcon" : "icon"}
           />
         </div>
       </span>

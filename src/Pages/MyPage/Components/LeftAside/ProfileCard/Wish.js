@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Icon } from '@class101/ui';
 
-function Wish() {
+function Wish({ wishAmount }) {
   return (
     <WishContainer>
       <Icon.HeartOutline />
       <WishDescription>
-        찜 <Quantity>6</Quantity>개
+        찜 <Quantity>{wishAmount}</Quantity>개
       </WishDescription>
     </WishContainer>
   );

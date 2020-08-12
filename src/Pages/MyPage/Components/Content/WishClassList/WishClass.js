@@ -1,26 +1,62 @@
-import React from "react";
+
+/* global history */
+/* global location */
+/* global window */
+
+/* eslint no-restricted-globals: ["off"] */
+
+import React, { useState } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { Icon, Colors, Card, Caption1, Badge, Divider } from "@class101/ui";
 import "./WishClass.scss";
+import { SIGNATURE_WISH_API_URL } from "../../../../../Config";
+
 
 function WishClass({
+  dipStatus,
+  product_id,
+  image_url,
   category,
-  image_src,
   creator,
-  name,
-  rate,
-  start_date,
-  like,
-  discount_rate,
+  product_name,
   price,
-  pay_per_month,
-  month,
+  discount_rate,
+  like,
+  monthPrice,
+  installment,
+  start_date,
+  satisfactory,
+  dataHandler,
+  setWishAmout,
+  wishAmount,
+  getData,
 }) {
+
+  const [isWishAdd, setIsWishAdd] = useState(false)
+
+  const wishAddHandler = () => {
+    if (confirm("정말로 취소하시겠습니까? 알림 및 혜택을 받지 못하실 수 있습니다.") == true) {
+      setIsWishAdd(!isWishAdd)
+      !isWishAdd && setWishAmout(wishAmount - 1)
+      fetch(`${SIGNATURE_WISH_API_URL}`, {
+        method: "POST",
+        body: JSON.stringify({
+          user_id: 8,
+          product_id,
+          dipStatus
+        })
+      })
+        .then(getData())
+    } else {
+      return setIsWishAdd(isWishAdd)
+    }
+
+  }
   return (
-    <section className="WishClass">
+    <section className="WishClass" product_id={product_id} dipStatus={dipStatus}>
       <Card
-        title={name}
-        coverImage={image_src}
+        title={product_name}
+        coverImage={image_url}
         extraTop={
           <Caption1 fontWeight={600} color={Colors.gray900}>
             {category} ・ {creator}
@@ -42,7 +78,7 @@ function WishClass({
               color={Colors.gray400}
               size="sm"
             >
-              {rate}
+              {satisfactory}
             </Badge>
           </div>
         }
@@ -55,8 +91,8 @@ function WishClass({
           <span className="discountPercent">{discount_rate}%</span>
         </div>
         <div className="payMonth">
-          <strong className="pay">월 {pay_per_month}원</strong>
-          <span className="month">({month}개월)</span>
+          <strong className="pay">월 {monthPrice}원</strong>
+          <span className="month">({installment}개월)</span>
         </div>
         <Badge
           size="sm"
@@ -66,10 +102,9 @@ function WishClass({
         >
           <div className="startDate">{start_date}</div>
         </Badge>
-        <div className="wishContainer">
-          <Icon.HeartOutline
-            fillColor={Colors.white}
-            className="cardClassHeart"
+        <div className="wishContainer" onClick={wishAddHandler}>
+          <Icon.Heart
+            fill className="onIcon"
           />
         </div>
       </Card>

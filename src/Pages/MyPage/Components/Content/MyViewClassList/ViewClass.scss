@@ -60,4 +60,18 @@
       margin-left: 3px;
     }
   }
+
+  .icon { 
+    width: 24px;
+    path {
+      fill: rgb(237, 239, 240);
+    }
+  }
+
+  .onIcon {
+    width: 24px;
+    path {
+      fill: rgb(252, 61, 70);
+    }
+  }
 }

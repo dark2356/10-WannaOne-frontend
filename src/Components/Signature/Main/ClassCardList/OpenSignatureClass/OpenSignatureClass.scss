@@ -13,13 +13,18 @@
   }
 
   .cardClassHeartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 15px;
+    width: 32px;
+    height: 32px;
+    top: 5px;
     right: 15px;
 
     &:hover {
-      background-color: #808080;
-      border-radius: 20px;
+      background-color: rgba(248, 248, 249, 0.2);
+      border-radius: 100%;
     }
   }
   .cardClassCategory {
@@ -60,6 +65,20 @@
     .ProductState {
       font-size: 10px;
       color: #f33340;
+    }
+  }
+
+  .icon { 
+    width: 24px;
+    path {
+      fill: rgb(237, 239, 240);
+    }
+  }
+
+  .onIcon {
+    width: 24px;
+    path {
+      fill: rgb(252, 61, 70);
     }
   }
 }

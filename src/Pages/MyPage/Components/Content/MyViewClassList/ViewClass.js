@@ -1,26 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { Icon, Colors, Card, Caption1, Badge, Divider } from "@class101/ui";
+import { SIGNATURE_WISH_API_URL } from "../../../../../Config";
 import "./ViewClass.scss";
 
 function ViewClass({
+  dipStatus,
+  product_id,
+  image_url,
   category,
-  image_src,
   creator,
-  name,
-  rate,
-  start_date,
-  like,
-  discount_rate,
+  product_name,
   price,
-  pay_per_month,
-  month,
+  discount_rate,
+  like,
+  monthPrice,
+  installment,
+  start_date,
+  satisfactory,
+  setWishAmout,
+  wishAmount,
+  getData,
 }) {
+
+  const [heartState, setHeartState] = useState(false)
+
+  useEffect(() => {
+    setHeartState(dipStatus)
+  }, [])
+
+  const wishAddHandler = () => {
+    !heartState ? setWishAmout(wishAmount + 1) : setWishAmout(wishAmount - 1)
+    !heartState ? setHeartState(true) : setHeartState(false)
+    fetch(`${SIGNATURE_WISH_API_URL}`, {
+      method: "POST",
+      body: JSON.stringify({
+        user_id: 8,
+        product_id,
+        dipStatus: heartState,
+      })
+    })
+      .then(getData())
+  }
+
   return (
-    <section className="ViewClass">
+    <section className="ViewClass" product_id={product_id} dipStatus={dipStatus}>
       <Card
-        title={name}
-        coverImage={image_src}
+        title={product_name}
+        coverImage={image_url}
         extraTop={
           <Caption1 fontWeight={600} color={Colors.gray900}>
             {category} ・ {creator}
@@ -42,7 +69,7 @@ function ViewClass({
               color={Colors.gray400}
               size="sm"
             >
-              {rate}
+              {satisfactory}
             </Badge>
           </div>
         }
@@ -51,12 +78,12 @@ function ViewClass({
           <Divider color="#F2F4F5" />
         </div>
         <div className="discountPrice">
-          <span className="originalPrice">{price}</span>
+          <span className="originalPrice">{price}원</span>
           <span className="discountPercent">{discount_rate}%</span>
         </div>
         <div className="payMonth">
-          <strong className="pay">월 {pay_per_month}원</strong>
-          <span className="month">({month}개월)</span>
+          <strong className="pay">월 {monthPrice}원</strong>
+          <span className="month">({installment}개월)</span>
         </div>
         <Badge
           size="sm"
@@ -66,10 +93,10 @@ function ViewClass({
         >
           <div className="startDate">{start_date}</div>
         </Badge>
-        <div className="wishContainer">
-          <Icon.HeartOutline
+        <div className="wishContainer" onClick={wishAddHandler}>
+          <Icon.Heart
+            fill className={heartState ? "onIcon" : "icon"}
             fillColor={Colors.white}
-            className="cardClassHeart"
           />
         </div>
       </Card>

@@ -6,7 +6,7 @@ import Wish from "./Wish";
 import Order from "./Order";
 import styled from "styled-components";
 
-function ProfileCard() {
+function ProfileCard({ wishAmount }) {
   return (
     <ProfileCardContainer>
       <UserContainer>
@@ -15,7 +15,7 @@ function ProfileCard() {
       </UserContainer>
       <ToolTipContainer>
         <Coupon />
-        <Wish />
+        <Wish wishAmount={wishAmount} />
         <Order />
       </ToolTipContainer>
     </ProfileCardContainer>

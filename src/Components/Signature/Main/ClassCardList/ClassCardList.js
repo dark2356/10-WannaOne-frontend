@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import OpenSignatureClass from "./OpenSignatureClass/OpenSignatureClass";
-import { Class_Card_URL } from "../../../../Config";
+import { Class_Card_URL, SIGNATURE_API_URL } from "../../../../Config";
 import "./ClassCardList.scss";
 
 function ClassCardList() {
   const [data, setdata] = useState([]);
   useEffect(() => {
-    fetch(`${Class_Card_URL}/top10`)
+    fetch(`${SIGNATURE_API_URL}`)
       .then((res) => res.json())
       .then((res) => {
         setdata(res.data);
@@ -21,6 +21,8 @@ function ClassCardList() {
           {data.map((datalist, index) => {
             return (
               <OpenSignatureClass
+                dipStatus={datalist.dipStatus}
+                product_id={datalist.product_id}
                 key={index}
                 image_src={datalist.image}
                 name={datalist.name}
