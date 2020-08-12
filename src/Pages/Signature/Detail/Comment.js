@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { COMMENT_MOCK_URL } from "../../../Config";
 import "./Comment.scss";
 
 function Comment() {
   const [commentData, setCommentData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3000/data/commentdata.json").then((res) => {
+    axios.get(COMMENT_MOCK_URL).then((res) => {
       setCommentData(res.data.data);
     });
   }, []);

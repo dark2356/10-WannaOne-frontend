@@ -1,4 +1,4 @@
-export const API_URL = "http://10.58.1.236:8000";
+export const API_URL = "http://10.58.1.236:8000/user/sign-in";
 
 export const SIGNUP_API_URL = "http://10.58.0.30:8000/user/sign-up";
 
@@ -18,12 +18,24 @@ export const TABITEMS_URL = "http://localhost:3000/data/tabitems.json";
 export const DETAIL_DATA_URL = "http://localhost:3000/data/detailData.json";
 
 export const REVIEW_ITEMS_URL = "http://localhost:3000/data/reviewItems.json";
+
 export const SIGNATURE_API_URL = "http://10.58.0.165:8000/product?category=2";
+
 export const SIGNATURE_WISH_API_URL = "http://10.58.0.165:8000/product/dip";
 
 export const WISH_CLASS_API_URL = "http://10.58.0.165:8000/product";
+
 export const VIEW_CLASS_API_URL = "http://10.58.0.165:8000/product?category=5";
 
 export const MY_PAGE_API_URL = "http://10.58.0.165:8000/mypage";
 
+export const STREAMING_URL = "http://10.58.2.64:8000/lecture";
 
+export const STREAMING_COMMENT_MOCK_URL =
+  "http://localhost:3000/data/classData.json";
+
+export const STREAMING_COMMENT_URL = "http://10.58.2.64:8000/lecture/comment";
+
+export const COMMENT_MOCK_URL = "http://localhost:3000/data/commentdata.json";
+
+export const COMMENT_DELETE_URL = "http://10.58.2.64:8000/lecture/comment/?id=";

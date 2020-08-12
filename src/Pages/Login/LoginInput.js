@@ -105,22 +105,6 @@ function LoginInput() {
     });
   };
 
-  // const checkState = (res) => {
-  //   console.log(res);
-  //   if (res.status === "connected") {
-  //     getUsers();
-  //   } else {
-  //     window.FB.login();
-  //     console.log(res);
-  //   }
-  // };
-
-  // const getUsers = () => {
-  //   window.FB.api("/me", { fields: ["email", "name"] }, (response) => {
-  //     console.log(response);
-  //   });
-  // };
-
   return (
     <div className="LoginInput">
       <h1 className="loginHeader">
