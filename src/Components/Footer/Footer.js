@@ -29,7 +29,7 @@ function Footer({ color, background }) {
                 오전 10시 ~ 오후 6시 (주말, 공휴일 제외)
               </span>
             </div>
-            <KakaoBtn color="white" background="black" />
+            <KakaoBtn color="white" background="#1b1c1d" />
           </div>
         </div>
         <div className="footerInfoContainer">

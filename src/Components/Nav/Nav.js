@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Icon, Colors } from "@class101/ui";
+import { Icon } from "@class101/ui";
 import "./Nav.scss";
 
 function Nav({ color, background, backgroundColor }) {
@@ -33,15 +33,6 @@ function Nav({ color, background, backgroundColor }) {
             <Link to="/login">로그인</Link>
           </a>
         </div>
-      </div>
-      <div className="mainNav" style={{ color }}>
-        <Icon.Menu fillColor={color} className="navMenu" />
-        <span className="navText">전체</span>
-        <span className="navText">크리에이티브</span>
-        <span className="navText">커리어</span>
-        <span className="navText">시그니쳐</span>
-        <span className="navText Libre">리브레</span>
-        <span className="navText">스토어</span>
       </div>
     </div>
   );

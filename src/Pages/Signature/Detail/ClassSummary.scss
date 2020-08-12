@@ -1,0 +1,193 @@
+.classSummary {
+  padding: 40px 0;
+  border-bottom: 1px solid rgb(237, 239, 240);
+
+  h2 {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: #fff;
+  }
+
+  dl {
+    display: flex;
+
+    .summary {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: -0.15px;
+    }
+
+    dt {
+      margin: 0 12px 0 0;
+      color: rgb(133, 138, 141);
+    }
+
+    dd {
+      margin: 0 48px 0 0;
+      color: #fff;
+    }
+  }
+}
+
+.divider {
+  margin-bottom: 24px;
+}
+
+.classPostWrapper {
+  padding: 48px 0;
+
+  .postTitle {
+    color: rgb(248, 248, 249);
+  }
+
+  .reviewContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+
+    .review {
+      display: inline-flex;
+      justify-content: center;
+      width: 50%;
+      text-align: center;
+
+      a {
+        dt {
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 16px;
+          color: rgb(133, 138, 141);
+        }
+
+        dd {
+          font-size: 32px;
+          font-weight: 800;
+          line-height: 44px;
+          letter-spacing: -0.6px;
+          color: rgb(248, 248, 249);
+
+          span {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: -0.45px;
+          }
+        }
+      }
+    }
+
+    .horizontal {
+      width: 1px;
+      height: 50px;
+      flex: 0 0 auto;
+      background: rgb(62, 64, 66);
+    }
+  }
+
+  .reviewImg {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px -8px -8px;
+    overflow: hidden;
+
+    a {
+      width: 25%;
+      padding: 8px;
+
+      span {
+        display: block;
+        position: relative;
+        padding-top: 100%;
+        font-size: 0px;
+        overflow: hidden;
+
+        .reviewImgBox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($color: #1b1c1d, $alpha: 0.8);
+          z-index: 10;
+
+          &.more {
+            display: none;
+          }
+
+          .moreView {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+          }
+        }
+
+        picture {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .reviewDivider {
+    height: 1px;
+    margin: 24px 0;
+  }
+
+  .moreReviewWrapper {
+    margin-top: 24px;
+
+    .moreReviewBox {
+      display: inline-flex;
+      vertical-align: middle;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      color: rgb(252, 61, 70);
+      cursor: pointer;
+
+      .plusIcon {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: center;
+        width: 18px;
+        height: 18px;
+        margin-right: 4px;
+      }
+
+      .boxTitle {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.benefit {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  max-width: 960px;
+
+  .benTitle {
+    width: 100%;
+    margin: 48px 0 24px;
+
+    h3 {
+      color: rgb(237, 239, 240);
+    }
+  }
+
+  .couponBox {
+    width: 100%;
+    margin-top: -8px;
+
+    .coupon {
+      padding: 16px;
+      margin-bottom: 16px;
+      background-color: rgb(252, 61, 70);
+      border-radius: 4px;
+
+      &.disabled {
+        background-color: rgb(62, 64, 66);
+      }
+
+      h4 {
+        color: rgb(237, 239, 240);
+      }
+
+      .coupInf {
+        margin-top: 12px;
+        align-items: center;
+        opacity: 0.85;
+
+        div {
+          margin-left: 2px;
+          font-size: 11px;
+          line-height: 16px;
+          color: rgb(254, 239, 242);
+        }
+      }
+
+      button {
+        margin-top: 16px;
+        font-weight: bold;
+        background-color: rgb(252, 81, 90);
+
+        &.disabled {
+          background-color: rgb(97, 101, 104);
+          color: rgb(133, 138, 141);
+        }
+      }
+    }
+  }
+
+  .benefitCalc {
+    width: 100%;
+
+    h4 {
+      margin-bottom: 16px;
+      color: rgb(237, 239, 240);
+    }
+
+    dl {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      width: 100%;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: -0.15px;
+      color: rgb(168, 174, 179);
+
+      .installment {
+        font-size: 11px;
+        line-height: 16px;
+        color: rgb(252, 61, 70);
+
+        div {
+          display: flex;
+          align-items: flex-end;
+          cursor: pointer;
+        }
+
+        .instIcon {
+          display: inline-block;
+          margin-left: 4px;
+          margin-bottom: 2px;
+        }
+      }
+
+      .instPrice {
+        margin: 2px 0 0;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: -0.15px;
+        color: rgb(252, 61, 70);
+
+        &::after {
+          content: "원";
+          font-size: 14px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+.cardInf {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.15px;
+}

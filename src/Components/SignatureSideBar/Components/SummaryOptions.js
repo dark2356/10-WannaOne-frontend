@@ -1,6 +1,6 @@
 import React from "react";
 import "./SummaryOptions.scss";
-import { Icon } from '@class101/ui';
+import { Icon } from "@class101/ui";
 
 function SummaryOptions({ productInfo }) {
   return (
@@ -28,11 +28,13 @@ function SummaryOptions({ productInfo }) {
           <div className="iconBox">
             <Icon.LikeOutline fill className="icon" />
           </div>
-          <div className="text">강의 만족도 {productInfo && productInfo.satisfactory}</div>
+          <div className="text">
+            강의 만족도 {productInfo && productInfo.satisfactory}
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default SummaryOptions;

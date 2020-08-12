@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 import Label from "./Components/Label";
 import ProductPriceInfo from "./Components/ProductPriceInfo";
 import SummaryOptions from "./Components/SummaryOptions";
@@ -8,14 +8,14 @@ import ClassApplyBtn from "./Components/ClassApplyBtn";
 import Class101IntroductionBanner from "./Components/Class101IntroductionBanner";
 import { SIGNATURE_API_URL } from "../../Config";
 
-function SignatureSideBar() {
-  const [productInfo, setProductInfo] = useState({})
+function SignatureSideBar({ isCouponClicked, setIsCouponClicked }) {
+  const [productInfo, setProductInfo] = useState({});
 
   useEffect(() => {
     fetch(`${SIGNATURE_API_URL}`)
-      .then(res => res.json())
-      .then(res => setProductInfo(res))
-  }, [])
+      .then((res) => res.json())
+      .then((res) => setProductInfo(res));
+  }, []);
 
   return (
     <SignatureSideBarContainer>
@@ -28,7 +28,10 @@ function SignatureSideBar() {
           <Label productInfo={productInfo} />
         </div>
         <div className="priceInfoBox">
-          <ProductPriceInfo />
+          <ProductPriceInfo
+            isCouponClicked={isCouponClicked}
+            setIsCouponClicked={setIsCouponClicked}
+          />
         </div>
         <SummaryOptions productInfo={productInfo} />
         <WishShare />
@@ -36,7 +39,7 @@ function SignatureSideBar() {
       </article>
       <Class101IntroductionBanner />
     </SignatureSideBarContainer>
-  )
+  );
 }
 
 const SignatureSideBarContainer = styled.section`
@@ -44,6 +47,7 @@ const SignatureSideBarContainer = styled.section`
   color: rgb(237, 239, 240);
   width: 376px;
   height: 720px;
+  position: sticky;
 
   .productHeader {
     width: 376px;
@@ -51,7 +55,7 @@ const SignatureSideBarContainer = styled.section`
     margin: 0 0 15px;
     padding: 24px;
     border: 1px solid rgb(62, 64, 66);
-    
+
     .creatorName {
       display: block;
       color: rgb(168, 174, 179);
@@ -66,6 +70,6 @@ const SignatureSideBarContainer = styled.section`
       font-size: 20px;
     }
   }
-`
+`;
 
 export default SignatureSideBar;
