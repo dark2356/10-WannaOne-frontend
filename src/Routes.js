@@ -7,6 +7,7 @@ import DetailPage from "./Pages/Signature/Detail/DetailPage";
 import SignatureSideBar from "./Components/SignatureSideBar/SignatureSideBar";
 import MyPage from "./Pages/MyPage/MyPage";
 import Streaming from "./Pages/Streaming/Streaming";
+import SignatureHeadCover from "./Pages/Signature/Detail/SignatureHeadCover";
 
 function Routes() {
   return (
@@ -19,6 +20,7 @@ function Routes() {
         <Route exact path="/signature" component={SignatureSideBar} />
         <Route exact path="/mypage" component={MyPage} />
         <Route exact path="/classes" component={Streaming} />
+        <Route exact path="/signature/detail" component={SignatureHeadCover} />
       </Switch>
     </Router>
   );

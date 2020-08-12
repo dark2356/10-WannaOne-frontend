@@ -25,3 +25,5 @@ export const WISH_CLASS_API_URL = "http://10.58.0.165:8000/product";
 export const VIEW_CLASS_API_URL = "http://10.58.0.165:8000/product?category=5";
 
 export const MY_PAGE_API_URL = "http://10.58.0.165:8000/mypage";
+
+
