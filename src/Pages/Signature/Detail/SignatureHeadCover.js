@@ -9,7 +9,7 @@ function SignatureHeadCover() {
   const [product, setProduct] = useState({});
 
   const GetProudctData = () => {
-    fetch(`${SIGNATURE_MOCKUP_DATA}`)
+    fetch(`${SIGNATURE_API_URL}`)
       .then(res => res.json())
       .then(res => setProduct(res))
   }
@@ -19,6 +19,7 @@ function SignatureHeadCover() {
   }, [])
 
   return (
+    <SignatureHeadCoverWrapper>
     <SignatureHeadCoverContainer>
       <SignatureHeadCoverWrap
         onClick={() => setModalState(true)}
@@ -44,12 +45,18 @@ function SignatureHeadCover() {
       </SignatureHeadCoverWrap>
       <Modal state={modalState} closeModal={() => setModalState(false)} product={product} />
     </SignatureHeadCoverContainer>
+    </SignatureHeadCoverWrapper>
   );
 }
+
+const SignatureHeadCoverWrapper = styled.div`
+  background-color: rgb(27, 28, 29);
+`
 
 const SignatureHeadCoverContainer = styled.section`
   background-color: rgb(27, 28, 29);
   max-width: 1920px;
+  margin: 0 auto;
   height: 690px;
 `
 const SignatureHeadCoverWrap = styled.div`

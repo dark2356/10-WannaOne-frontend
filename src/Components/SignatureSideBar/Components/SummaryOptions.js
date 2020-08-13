@@ -22,14 +22,14 @@ function SummaryOptions({ productInfo }) {
           <div className="iconBox">
             <Icon.PersonOutline fill className="icon" />
           </div>
-          <div className="text">{productInfo && productInfo.level}</div>
+          <div className="text">{productInfo && productInfo.level} 대상</div>
         </div>
         <div className="Wrapper satisfactionScore">
           <div className="iconBox">
             <Icon.LikeOutline fill className="icon" />
           </div>
           <div className="text">
-            강의 만족도 {productInfo && productInfo.satisfactory}
+            강의 만족도 {productInfo && productInfo.rate}%
           </div>
         </div>
       </div>

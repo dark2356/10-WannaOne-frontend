@@ -21,7 +21,7 @@ function SignatureSideBar({ isCouponClicked, setIsCouponClicked }) {
     <SignatureSideBarContainer>
       <article className="productHeader">
         <span className="creatorName">
-          By. {productInfo.creater && productInfo.creater.name}
+          By. {productInfo.creator && productInfo.creator.name}
         </span>
         <h2 className="title">{productInfo && productInfo.name}</h2>
         <div className="labelBox">
@@ -47,6 +47,7 @@ const SignatureSideBarContainer = styled.section`
   color: rgb(237, 239, 240);
   width: 376px;
   height: 720px;
+  top: 0;
   position: sticky;
 
   .productHeader {

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import OpenSignatureClass from "./OpenSignatureClass/OpenSignatureClass";
-import { Class_Card_URL, SIGNATURE_API_URL } from "../../../../Config";
+import { SIGNATURE_MAIN_URL } from "../../../../Config";
 import "./ClassCardList.scss";
 
 function ClassCardList() {
   const [data, setdata] = useState([]);
   useEffect(() => {
-    fetch(`${SIGNATURE_API_URL}`)
+    fetch(`${SIGNATURE_MAIN_URL}`)
       .then((res) => res.json())
       .then((res) => {
         setdata(res.data);

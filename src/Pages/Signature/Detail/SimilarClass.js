@@ -50,11 +50,11 @@ function SimilarClass({
           <Divider color="#3E4042" />
         </div>
         <div className="discountPrice">
-          <span className="originalPrice">{price}</span>
+          <span className="originalPrice">{price}원</span>
           <span className="discountPercent">{discount_rate}%</span>
         </div>
         <div className="payMonth">
-          <strong className="pay">월 {pay_per_month}원</strong>
+          <strong className="pay">월 {pay_per_month.slice(0, pay_per_month.indexOf('.'))}원</strong>
         </div>
         <Badge
           size="sm"

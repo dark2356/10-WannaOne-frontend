@@ -16,6 +16,7 @@ import Refund from "./Refund";
 import Nav from "../../../Components/Nav/Nav";
 import Footer from "../../../Components/Footer/Footer";
 import SignatureSideBar from "../../../Components/SignatureSideBar/SignatureSideBar";
+import SignatureHeadCover from "./SignatureHeadCover";
 import {
   PRODUCT_VIEW_URL,
   TABITEMS_URL,
@@ -99,6 +100,8 @@ function DetailPage() {
     <>
       <Nav color="white" backgroundColor="#3E4042" background="black" />
       {curiItems.length && (
+        <>
+        <SignatureHeadCover />
         <div className="DetailPage">
           <div className="detailContainer">
             <div className="detailWrapper">
@@ -171,6 +174,7 @@ function DetailPage() {
           </div>
           <FloatingBtn scrollToTop={scrollToTop} />
         </div>
+        </>
       )}
       <Footer color="white" background="#1b1c1d" />
     </>
