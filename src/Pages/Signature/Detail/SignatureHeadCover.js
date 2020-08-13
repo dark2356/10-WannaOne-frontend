@@ -7,10 +7,9 @@ import { DETAIL_DATA_URL, SIGNATURE_MODAL_API_URL } from "../../../Config";
 function SignatureHeadCover() {
   const [modalState, setModalState] = useState(false);
   const [product, setProduct] = useState({});
-  const [sliderData, setSliderData] = useState([]);
+  const [modalProduct, setModalProduct] = useState({});
 
-  const topPics = product.topPictures; // 이미지 url들이 담긴 배열 
-  const url1 = "https://cdn.class101.net/images/ad977296-10cf-46d8-9160-4333704188d4"
+  const topPics = product.topPictures;
 
   const reArrangeSlider = (url, arr) => {
     const findNum = arr.indexOf(url)
@@ -30,34 +29,36 @@ function SignatureHeadCover() {
     GetProudctData();
   }, [])
 
+  const handleModalState = (idx) => {
+    const result = { ...product, topPictures: reArrangeSlider(topPics[idx], topPics) }
 
-  reArrangeSlider(url1, topPics)
+    setModalProduct(result)
+    setModalState(true)
+  }
 
-  //setSliderData(reArrangeSlider(url1, url1))
-  // console.log("topPics: ", topPics) 
   return (
     <SignatureHeadCoverContainer>
       <SignatureHeadCoverWrap>
         <TitleViewWrap>
-          <TitleViewImage src={product.topPictures && product.topPictures[0]} onClick={() => setModalState(true)} />
+          <TitleViewImage src={product.topPictures && product.topPictures[0]} onClick={() => handleModalState(0)} />
         </TitleViewWrap>
         <SubViewWrap>
           <SubViewTop>
-            <SubViewTopImage src={product.topPictures && product.topPictures[1]} onClick={() => setModalState(true)} />
+            <SubViewTopImage src={product.topPictures && product.topPictures[1]} onClick={() => handleModalState(1)} />
           </SubViewTop>
           <SubViewBottom>
             <SubViewBottomImage>
               <div className="left imageBox">
-                <img className="leftImg" src={product.topPictures && product.topPictures[2]} alt="productImg" onClick={() => setModalState(true)} />
+                <img className="leftImg" src={product.topPictures && product.topPictures[2]} alt="productImg" onClick={() => handleModalState(2)} />
               </div>
               <div className="right imageBox">
-                <img className="rightImg" src={product.topPictures && product.topPictures[3]} alt="productImg" onClick={() => setModalState(true)} />
+                <img className="rightImg" src={product.topPictures && product.topPictures[3]} alt="productImg" onClick={() => handleModalState(3)} />
               </div>
             </SubViewBottomImage>
           </SubViewBottom>
         </SubViewWrap>
       </SignatureHeadCoverWrap>
-      <Modal state={modalState} closeModal={() => setModalState(false)} product={product} />
+      <Modal state={modalState} closeModal={() => setModalState(false)} product={modalProduct} />
     </SignatureHeadCoverContainer>
   );
 }
