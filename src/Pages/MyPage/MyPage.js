@@ -6,11 +6,24 @@ import MyViewClassList from "./Components/Content/MyViewClassList/MyViewClassLis
 import WishClassList from "./Components/Content/WishClassList/WishClassList"
 import MyPageNav from "./Components/MyPageNav/MyPageNav";
 import MyPageFooter from "./Components/MyPageFooter/MyPageFooter";
-import { MY_PAGE_API_URL } from "../../Config";
+import { MY_PAGE_API_URL, MY_PAGE_PROFILE_API_URL } from "../../Config";
 
 function MyPage() {
   const [data, setData] = useState([]);
   const [wishAmount, setWishAmout] = useState(0)
+  const [userInfo, setUserInfo] = useState({})
+
+  useEffect(() => {
+    fetch(`${MY_PAGE_PROFILE_API_URL}`, {
+      method: "GET",
+      headers: {
+        "Authorization": localStorage.getItem("Kakao_token")
+      }
+    })
+      .then(res => res.json())
+      .then(res => setUserInfo(res.data))
+  }, [])
+
 
   useEffect(() => {
     getData()
@@ -35,12 +48,13 @@ function MyPage() {
       });
   }
 
+  console.log("MY_PAGE_API_URL: ", data)
   return (
     <MyPageContainer>
       <MyPageNav />
       <MypageWrapper>
         <LeftAside>
-          <ProfileCard wishAmount={wishAmount} />
+          <ProfileCard wishAmount={wishAmount} userInfo={userInfo} />
           <MyAttendance />
           <Membership />
         </LeftAside>
