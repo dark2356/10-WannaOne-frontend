@@ -6,11 +6,11 @@ import Wish from "./Wish";
 import Order from "./Order";
 import styled from "styled-components";
 
-function ProfileCard({ wishAmount }) {
+function ProfileCard({ wishAmount, userInfo }) {
   return (
     <ProfileCardContainer>
       <UserContainer>
-        <ProfileEdit />
+        <ProfileEdit userInfo={userInfo} />
         <Point />
       </UserContainer>
       <ToolTipContainer>
