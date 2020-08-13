@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled from "styled-components"
 import Label from "./Components/Label";
 import ProductPriceInfo from "./Components/ProductPriceInfo";
 import SummaryOptions from "./Components/SummaryOptions";
 import WishShare from "./Components/WishShare";
 import ClassApplyBtn from "./Components/ClassApplyBtn";
 import Class101IntroductionBanner from "./Components/Class101IntroductionBanner";
-import { SIGNATURE_API_URL } from "../../Config";
+import { DETAIL_DATA_URL } from "../../Config";
 
 function SignatureSideBar({ isCouponClicked, setIsCouponClicked }) {
-  const [productInfo, setProductInfo] = useState({});
+  const [productInfo, setProductInfo] = useState({})
 
   useEffect(() => {
-    fetch(`${SIGNATURE_API_URL}`)
-      .then((res) => res.json())
-      .then((res) => setProductInfo(res));
-  }, []);
+    fetch(`${DETAIL_DATA_URL}`)
+      .then(res => res.json())
+      .then(res => setProductInfo(res))
+  }, [])
 
   return (
     <SignatureSideBarContainer>
@@ -39,7 +39,7 @@ function SignatureSideBar({ isCouponClicked, setIsCouponClicked }) {
       </article>
       <Class101IntroductionBanner />
     </SignatureSideBarContainer>
-  );
+  )
 }
 
 const SignatureSideBarContainer = styled.section`
@@ -56,7 +56,7 @@ const SignatureSideBarContainer = styled.section`
     margin: 0 0 15px;
     padding: 24px;
     border: 1px solid rgb(62, 64, 66);
-
+    
     .creatorName {
       display: block;
       color: rgb(168, 174, 179);
@@ -71,6 +71,6 @@ const SignatureSideBarContainer = styled.section`
       font-size: 20px;
     }
   }
-`;
+`
 
 export default SignatureSideBar;
