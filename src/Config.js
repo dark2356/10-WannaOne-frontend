@@ -19,16 +19,6 @@ export const DETAIL_DATA_URL = "http://10.58.2.64:8000/product/3";
 
 export const REVIEW_ITEMS_URL = "http://localhost:3000/data/reviewItems.json";
 
-export const SIGNATURE_API_URL = "http://10.58.2.64:8000/product/3";
-
-export const SIGNATURE_WISH_API_URL = "http://10.58.2.64:8000/product/dip";
-
-export const WISH_CLASS_API_URL = "http://10.58.2.64:8000/product?category=2";
-
-export const VIEW_CLASS_API_URL = "http://10.58.2.64:8000/product?category=5";
-
-export const MY_PAGE_API_URL = "http://10.58.2.64:8000/mypage";
-
 export const STREAMING_URL = "http://10.58.2.64:8000/lecture";
 
 export const STREAMING_COMMENT_MOCK_URL =
@@ -40,4 +30,17 @@ export const COMMENT_MOCK_URL = "http://localhost:3000/data/commentdata.json";
 
 export const COMMENT_DELETE_URL = "http://10.58.2.64:8000/lecture/comment/?id=";
 
+export const SIGNATURE_API_URL = "http://10.58.2.64:8000/product?category=2";
+export const SIGNATURE_WISH_API_URL = "http://10.58.2.64:8000/product/dip";
+
+export const WISH_CLASS_API_URL = "http://10.58.2.64:8000/product";
+export const VIEW_CLASS_API_URL = "http://10.58.2.64:8000/product?category=5";
+
+export const MY_PAGE_API_URL = "http://10.58.2.64:8000/mypage";
+export const MY_PAGE_PROFILE_API_URL = "http://10.58.1.163:8000/user/mypage";
+
+export const SIGNATURE_MODAL_API_URL = "http://10.58.2.64:8000/product/3"
+
 export const SIGNATURE_MAIN_URL = "http://10.58.2.64:8000/product?category=3";
+
+
