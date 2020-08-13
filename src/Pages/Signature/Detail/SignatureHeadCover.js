@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import Modal from "./Modal";
-import { SIGNATURE_MOCKUP_DATA, SIGNATURE_API_URL } from "../../../Config";
+import { SIGNATURE_MOCKUP_DATA, SIGNATURE_MODAL_API_URL } from "../../../Config";
 
 function SignatureHeadCover() {
   const [modalState, setModalState] = useState(false);
@@ -20,31 +20,31 @@ function SignatureHeadCover() {
 
   return (
     <SignatureHeadCoverWrapper>
-    <SignatureHeadCoverContainer>
-      <SignatureHeadCoverWrap
-        onClick={() => setModalState(true)}
-      >
-        <TitleViewWrap>
-          <TitleViewImage src={product.topPictures && product.topPictures[0]} />
-        </TitleViewWrap>
-        <SubViewWrap>
-          <SubViewTop>
-            <SubViewTopImage src={product.topPictures && product.topPictures[1]} />
-          </SubViewTop>
-          <SubViewBottom>
-            <SubViewBottomImage>
-              <div className="left imageBox">
-                <img className="leftImg" src={product.topPictures && product.topPictures[2]} alt="productImg" />
-              </div>
-              <div className="right imageBox">
-                <img className="rightImg" src={product.topPictures && product.topPictures[3]} alt="productImg" />
-              </div>
-            </SubViewBottomImage>
-          </SubViewBottom>
-        </SubViewWrap>
-      </SignatureHeadCoverWrap>
-      <Modal state={modalState} closeModal={() => setModalState(false)} product={product} />
-    </SignatureHeadCoverContainer>
+      <SignatureHeadCoverContainer>
+        <SignatureHeadCoverWrap
+          onClick={() => setModalState(true)}
+        >
+          <TitleViewWrap>
+            <TitleViewImage src={product.topPictures && product.topPictures[0]} />
+          </TitleViewWrap>
+          <SubViewWrap>
+            <SubViewTop>
+              <SubViewTopImage src={product.topPictures && product.topPictures[1]} />
+            </SubViewTop>
+            <SubViewBottom>
+              <SubViewBottomImage>
+                <div className="left imageBox">
+                  <img className="leftImg" src={product.topPictures && product.topPictures[2]} alt="productImg" />
+                </div>
+                <div className="right imageBox">
+                  <img className="rightImg" src={product.topPictures && product.topPictures[3]} alt="productImg" />
+                </div>
+              </SubViewBottomImage>
+            </SubViewBottom>
+          </SubViewWrap>
+        </SignatureHeadCoverWrap>
+        <Modal state={modalState} closeModal={() => setModalState(false)} product={product} />
+      </SignatureHeadCoverContainer>
     </SignatureHeadCoverWrapper>
   );
 }
