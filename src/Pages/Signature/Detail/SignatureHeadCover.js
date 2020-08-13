@@ -9,7 +9,7 @@ function SignatureHeadCover() {
   const [product, setProduct] = useState({});
 
   const GetProudctData = () => {
-    fetch(`${SIGNATURE_API_URL}`)
+    fetch(`${SIGNATURE_MODAL_API_URL}`)
       .then(res => res.json())
       .then(res => setProduct(res))
   }

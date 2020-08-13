@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Slider from "react-slick";
 import { Headline3 } from "@class101/ui";
-import { WISH_CLASS_API_URL, WISH_CLASS_MOCK_URL } from "../../../Config";
+import { SIGNATURE_API_URL } from "../../../Config";
 import SimilarClass from "./SimilarClass";
 import "./Recommend.scss";
 
@@ -17,7 +17,7 @@ function Recommend({ focusTarget }) {
 
   const [classData, setClassData] = useState([]);
   useEffect(() => {
-    axios.get(`${WISH_CLASS_API_URL}`).then((res) => {
+    axios.get(`${SIGNATURE_API_URL}`).then((res) => {
       setClassData(res.data.data);
     });
   }, []);
