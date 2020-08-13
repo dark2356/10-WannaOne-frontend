@@ -3,7 +3,7 @@ import FooterIcon from "./FooterIcon/FooterIcon";
 import KakaoBtn from "./KakaoBtn/KakaoBtn";
 import "./Footer.scss";
 
-function Footer({ color, background }) {
+function Footer({ color, background, kakaoBtnColor, kakaoBtnColorBack }) {
   return (
     <footer className="footer" style={{ background }}>
       <div className="contentsContainer">
@@ -29,7 +29,10 @@ function Footer({ color, background }) {
                 오전 10시 ~ 오후 6시 (주말, 공휴일 제외)
               </span>
             </div>
-            <KakaoBtn color="white" background="#1b1c1d" />
+            <KakaoBtn
+              color={kakaoBtnColor}
+              backgroundColor={kakaoBtnColorBack}
+            />
           </div>
         </div>
         <div className="footerInfoContainer">

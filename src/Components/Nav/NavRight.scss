@@ -1,0 +1,72 @@
+@import "../../Styles/common.scss";
+
+.haederRight {
+  @include flex_align;
+
+  .navigationLink {
+    font-size: 14px;
+    margin-right: 18px;
+  }
+
+  .profileBtnContainer {
+    display: flex;
+    align-items: center;
+
+    .arrowBtn {
+      width: 12px;
+      height: 12px;
+    }
+
+    .arrowTransform {
+      transform: rotate(180deg);
+    }
+  }
+
+  .none {
+    display: none;
+  }
+
+  .profileModalContainer {
+    width: 200px;
+    position: absolute;
+    top: 72px;
+    right: 430px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    padding: 26px 24px;
+    background-color: white;
+    box-shadow: rgba(41, 42, 43, 0.2) 0px 8px 10px 0px;
+    z-index: 999;
+
+    .myProfileContainer {
+      display: flex;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eceff0;
+
+      .profileName {
+        margin-bottom: 2px;
+        font-size: 14px;
+        color: rgb(27, 28, 29);
+      }
+
+      .profileMypage {
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        color: rgb(253, 126, 20);
+      }
+    }
+  }
+  .profileImage {
+    width: 34px;
+    height: 34px;
+    border-radius: 20px;
+    margin-right: 5px;
+  }
+
+  .logout {
+    font-size: 14px;
+  }
+}

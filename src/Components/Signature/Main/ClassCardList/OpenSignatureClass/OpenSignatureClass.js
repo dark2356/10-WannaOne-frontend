@@ -14,32 +14,33 @@ function OpenSignatureClass({
   start_date,
   like,
 }) {
-
-  const [isWishAdd, setIsWishAdd] = useState(false)
+  const [isWishAdd, setIsWishAdd] = useState(false);
   const wishAddHandler = () => {
-    setIsWishAdd(!isWishAdd)
+    setIsWishAdd(!isWishAdd);
     fetch(`${SIGNATURE_WISH_API_URL}`, {
       method: "POST",
       body: JSON.stringify({
         user_id: 8,
         product_id,
-        dipStatus
-      })
-    })
-  }
+        dipStatus,
+      }),
+    });
+  };
   return (
-    <section className="OpenSignatureClass" product_id={product_id} dipStatus={dipStatus}>
+    <section
+      className="OpenSignatureClass"
+      product_id={product_id}
+      dipStatus={dipStatus}
+    >
       <span>
-        <Card
-          title="아이패드 드로잉"
-          coverImage={image_src}
-          to={"/"}
-          external
-        />
+        <Link to="/detail">
+          <Card title="아이패드 드로잉" coverImage={image_src} external />
+        </Link>
         <div className="cardClassHeartContainer" onClick={wishAddHandler}>
           <Icon.Heart
             fillColor={Colors.white}
-            fill className={isWishAdd && dipStatus ? "onIcon" : "icon"}
+            fill
+            className={isWishAdd && dipStatus ? "onIcon" : "icon"}
           />
         </div>
       </span>
