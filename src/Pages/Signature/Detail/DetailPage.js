@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { Tabs, Theme, Headline3 } from "@class101/ui";
+import SignatureHeadCover from "./SignatureHeadCover";
 import FloatingBtn from "../../../Components/Nav/FloatingBtn";
 import Curriculum from "./Curriculum";
 import ClassSummary from "./ClassSummary";
@@ -99,6 +100,7 @@ function DetailPage() {
   return (
     <>
       <Nav color="white" backgroundColor="#3E4042" background="black" />
+      <SignatureHeadCover />
       {curiItems.length && (
         <>
         <SignatureHeadCover />
