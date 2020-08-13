@@ -1,8 +1,8 @@
-export const API_URL = "http://10.58.1.236:8000";
+export const API_URL = "http://10.58.1.236:8000/user/sign-in";
 
 export const SIGNUP_API_URL = "http://10.58.0.30:8000/user/sign-up";
 
-export const KAKAO_LOGIN_API_URL = "http://10.58.7.58:8000/user/sign-in/kakao";
+export const KAKAO_LOGIN_API_URL = "http://10.58.1.163:8000/user/sign-in/kakao";
 
 export const Class_Card_URL = "http://10.58.3.126:8000/product";
 
@@ -15,19 +15,30 @@ export const PRODUCT_VIEW_URL =
 
 export const TABITEMS_URL = "http://localhost:3000/data/tabitems.json";
 
-export const DETAIL_DATA_URL = "http://localhost:3000/data/detailData.json";
+export const DETAIL_DATA_URL = "http://10.58.2.64:8000/product/3";
 
 export const REVIEW_ITEMS_URL = "http://localhost:3000/data/reviewItems.json";
 
-export const SIGNATURE_API_URL = "http://10.58.0.165:8000/product?category=2";
-export const SIGNATURE_WISH_API_URL = "http://10.58.0.165:8000/product/dip";
+export const STREAMING_URL = "http://10.58.2.64:8000/lecture";
 
-export const WISH_CLASS_API_URL = "http://10.58.0.165:8000/product";
-export const VIEW_CLASS_API_URL = "http://10.58.0.165:8000/product?category=5";
+export const STREAMING_COMMENT_MOCK_URL =
+  "http://localhost:3000/data/classData.json";
 
-export const MY_PAGE_API_URL = "http://10.58.0.165:8000/mypage";
+export const STREAMING_COMMENT_URL = "http://10.58.2.64:8000/lecture/comment";
 
-export const HEAD_COVER_MOCK = "http://localhost:3000/signatureProduct.json"
+export const COMMENT_MOCK_URL = "http://localhost:3000/data/commentdata.json";
+
+export const COMMENT_DELETE_URL = "http://10.58.2.64:8000/lecture/comment/?id=";
+
+export const SIGNATURE_API_URL = "http://10.58.2.64:8000/product?category=2";
+export const SIGNATURE_WISH_API_URL = "http://10.58.2.64:8000/product/dip";
+
+export const WISH_CLASS_API_URL = "http://10.58.2.64:8000/product";
+export const VIEW_CLASS_API_URL = "http://10.58.2.64:8000/product?category=5";
+
+export const MY_PAGE_API_URL = "http://10.58.2.64:8000/mypage";
+export const MY_PAGE_PROFILE_API_URL = "http://10.58.1.163:8000/user/mypage";
+
 export const SIGNATURE_MODAL_API_URL = "http://10.58.2.64:8000/product/3"
 
-
+export const SIGNATURE_MAIN_URL = "http://10.58.2.64:8000/product?category=3";

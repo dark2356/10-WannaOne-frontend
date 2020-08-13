@@ -3,7 +3,7 @@ import { KakaoIcon } from "../../../../SignUp/SocialIcons";
 import styled from "styled-components";
 import { Icon, Avatar } from '@class101/ui';
 
-function ProfileEdit() {
+function ProfileEdit({ userInfo }) {
   return (
     <ProfileEditContainer>
       <ProfileImageContainer>
@@ -13,8 +13,8 @@ function ProfileEdit() {
           icon={<Icon.Edit size={12} />}
         />
       </ProfileImageContainer>
-      <ProfileName>배정규<KakaoIcon /></ProfileName>
-      <ProfileEmail>bae_jk@kakao.com</ProfileEmail>
+      <ProfileName>{userInfo.user_name}<KakaoIcon /></ProfileName>
+      <ProfileEmail>{userInfo.user_email}</ProfileEmail>
     </ProfileEditContainer>
   );
 }

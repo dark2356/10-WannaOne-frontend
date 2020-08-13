@@ -26,7 +26,7 @@ function SocialLogin() {
             localStorage.setItem("Kakao_token", res.access_token);
             if (res.access_token) {
               alert("Wanna One 에 오신걸 환영합니다!")
-              history.push("/login");
+              history.push("/");
             }
           })
       },

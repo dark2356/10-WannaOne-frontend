@@ -20,7 +20,7 @@ function SignatureHeadCover() {
   }
 
   const GetProudctData = () => {
-    fetch(`${DETAIL_DATA_URL}`)
+    fetch(`${SIGNATURE_API_URL}`)
       .then(res => res.json())
       .then(res => setProduct(res))
   }
@@ -37,35 +37,42 @@ function SignatureHeadCover() {
   }
 
   return (
-    <SignatureHeadCoverContainer>
-      <SignatureHeadCoverWrap>
-        <TitleViewWrap>
-          <TitleViewImage src={product.topPictures && product.topPictures[0]} onClick={() => handleModalState(0)} />
-        </TitleViewWrap>
-        <SubViewWrap>
-          <SubViewTop>
-            <SubViewTopImage src={product.topPictures && product.topPictures[1]} onClick={() => handleModalState(1)} />
-          </SubViewTop>
-          <SubViewBottom>
-            <SubViewBottomImage>
-              <div className="left imageBox">
-                <img className="leftImg" src={product.topPictures && product.topPictures[2]} alt="productImg" onClick={() => handleModalState(2)} />
-              </div>
-              <div className="right imageBox">
-                <img className="rightImg" src={product.topPictures && product.topPictures[3]} alt="productImg" onClick={() => handleModalState(3)} />
-              </div>
-            </SubViewBottomImage>
-          </SubViewBottom>
-        </SubViewWrap>
-      </SignatureHeadCoverWrap>
-      <Modal state={modalState} closeModal={() => setModalState(false)} product={modalProduct} />
-    </SignatureHeadCoverContainer>
+    <SignatureHeadCoverWrapper>
+      <SignatureHeadCoverContainer>
+        <SignatureHeadCoverWrap>
+          <TitleViewWrap>
+            <TitleViewImage src={product.topPictures && product.topPictures[0]} onClick={() => handleModalState(0)} />
+          </TitleViewWrap>
+          <SubViewWrap>
+            <SubViewTop>
+              <SubViewTopImage src={product.topPictures && product.topPictures[1]} onClick={() => handleModalState(1)} />
+            </SubViewTop>
+            <SubViewBottom>
+              <SubViewBottomImage>
+                <div className="left imageBox">
+                  <img className="leftImg" src={product.topPictures && product.topPictures[2]} alt="productImg" onClick={() => handleModalState(2)} />
+                </div>
+                <div className="right imageBox">
+                  <img className="rightImg" src={product.topPictures && product.topPictures[3]} alt="productImg" onClick={() => handleModalState(3)} />
+                </div>
+              </SubViewBottomImage>
+            </SubViewBottom>
+          </SubViewWrap>
+        </SignatureHeadCoverWrap>
+        <Modal state={modalState} closeModal={() => setModalState(false)} product={modalProduct} />
+      </SignatureHeadCoverContainer>
+    </SignatureHeadCoverWrapper>
   );
 }
+
+const SignatureHeadCoverWrapper = styled.div`
+  background-color: rgb(27, 28, 29);
+`
 
 const SignatureHeadCoverContainer = styled.section`
   background-color: rgb(27, 28, 29);
   max-width: 1920px;
+  margin: 0 auto;
   height: 690px;
 `
 const SignatureHeadCoverWrap = styled.div`

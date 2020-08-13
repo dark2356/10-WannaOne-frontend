@@ -43,7 +43,7 @@ function Recommend({ focusTarget }) {
                 discount_rate={datalist.discount_rate}
                 price={datalist.price}
                 month={datalist.month}
-                pay_per_month={datalist.pay_per_month}
+                pay_per_month={datalist.monthPrice}
               />
             );
           })}

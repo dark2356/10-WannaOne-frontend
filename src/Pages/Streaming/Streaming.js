@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { withRouter, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
 import {
   Headline3,
   Icon,
@@ -10,13 +11,71 @@ import {
   Subtitle1,
   Checkbox,
   AnchorButton,
+  Avatar,
+  Comment,
 } from "@class101/ui";
+import moment from "moment";
+import "moment/locale/ko";
+import {
+  STREAMING_URL,
+  STREAMING_COMMENT_URL,
+  STREAMING_COMMENT_MOCK_URL,
+  COMMENT_DELETE_URL,
+} from "../../Config";
 import Nav from "../../Components/Nav/Nav";
 import FloatingBtn from "../../Components/Nav/FloatingBtn";
 
 function Streaming() {
   const [isChecked, setIsChecked] = useState(false);
   const [isBtnClicked, setIsBtnClicked] = useState(false);
+  const [commentData, setCommentData] = useState([]);
+  const [classData, setClassData] = useState([]);
+  const [files, setFiles] = useState([]);
+  const [commentValue, setCommentValue] = useState("");
+
+  useEffect(() => {
+    axios.get(STREAMING_URL).then((res) => {
+      const newCommentData = res.data.comment.sort((a, b) => {
+        return (
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        );
+      });
+      setCommentData(newCommentData);
+      setClassData(res.data);
+    });
+  }, [commentData]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("photo", files.length ? files[0].uploadedFile : null);
+    formData.append("comment", commentValue);
+    formData.append("content_id", classData.content_id);
+
+    axios({
+      method: "post",
+      url: STREAMING_COMMENT_URL,
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    setCommentValue("");
+    setFiles([]);
+  };
+
+  const deleteComment = (e) => {
+    const target = e.target.parentNode.parentNode.id;
+    axios.get(COMMENT_DELETE_URL + target).then(() => {});
+  };
+
+  const handleUpload = (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    setFiles([...files, { uploadedFile: file }]);
+  };
+
+  const handleComment = (e) => {
+    setCommentValue(e.target.value);
+  };
 
   return (
     <>
@@ -84,18 +143,18 @@ function Streaming() {
               </TitleBox>
               <Video>
                 <video
-                  src="./images/test.mov"
+                  src={classData.lecture}
                   width="100%"
                   height="100%"
                   controls
-                  autoplay
+                  autoPlay
                 ></video>
               </Video>
               <CommentBox>
                 <CommentTitle>
                   <CommentCountBox>
                     <Subtitle1 className="commentCount">댓글</Subtitle1>
-                    <CommentCount>8개</CommentCount>
+                    <CommentCount>{commentData.length}개</CommentCount>
                   </CommentCountBox>
                 </CommentTitle>
                 <StyledDivider />
@@ -125,7 +184,11 @@ function Streaming() {
                     </Button>
                   </Filter>
                 </MyComment>
-                <CommentInput>
+                <CommentInput
+                  name="photo"
+                  encType="multipart/form-data"
+                  onSubmit={handleSubmit}
+                >
                   <CommentSection>
                     <CommentContainer>
                       <button type="button">
@@ -133,7 +196,9 @@ function Streaming() {
                           <label>
                             <input
                               type="file"
+                              name="photo"
                               accept="image/*,audio/*,video/mp4,video/x-m4v,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,.csv"
+                              onChange={handleUpload}
                             />
                             <img
                               alt="add"
@@ -142,25 +207,73 @@ function Streaming() {
                           </label>
                         </span>
                       </button>
-                      <textarea
-                        name="content"
+                      <input
+                        type="text"
+                        name="comment"
+                        value={commentValue}
                         placeholder="댓글을 입력해주세요."
-                      ></textarea>
+                        onChange={handleComment}
+                      ></input>
                     </CommentContainer>
                     <ButtonGroup>
                       <Button
                         leftIcon={<Icon.Send2 />}
                         color={ButtonColor.TRANSPARENT}
                         size={24}
-                        disabled
+                        type="submit"
+                        disabled={!commentValue && "disabled"}
                       />
                     </ButtonGroup>
                   </CommentSection>
                 </CommentInput>
-                <EmptyComment>
-                  <img alt="empty" src="/images/im-reply-empty.png" />
-                  <Subtitle1>작성된 댓글이 없어요.</Subtitle1>
-                </EmptyComment>
+                {!commentData.length ? (
+                  <EmptyComment>
+                    <img alt="empty" src="/images/im-reply-empty.png" />
+                    <Subtitle1>작성된 댓글이 없어요.</Subtitle1>
+                  </EmptyComment>
+                ) : (
+                  <CommentComp>
+                    <CommentListCont>
+                      {commentData.map((el, i) => {
+                        return (
+                          <Comment
+                            avatar={<Avatar src="/images/ic-unknown.png" />}
+                            name={el.user}
+                            timeText={moment(el.created_at).fromNow()}
+                            width="100%"
+                            nameDescription=""
+                            className="eachComment"
+                            key={i}
+                            leftAction={[
+                              <Comment.Action
+                                icon={<Icon.HeartOutline />}
+                                text="0"
+                              />,
+                              <Comment.Action icon={<Icon.Reply />} text="0" />,
+                            ]}
+                            rightAction={[
+                              <Comment.Action
+                                icon={<Icon.Trash />}
+                                onClick={deleteComment}
+                                id={el.id}
+                              />,
+                            ]}
+                            content={
+                              <div className="eachBox">
+                                <Comment.Image
+                                  className="cmtImg"
+                                  style={{ maxWidth: "270px" }}
+                                  src={el.image}
+                                />
+                                {el.talk}
+                              </div>
+                            }
+                          ></Comment>
+                        );
+                      })}
+                    </CommentListCont>
+                  </CommentComp>
+                )}
               </CommentBox>
             </VideoBox>
             <IntroBox>
@@ -502,7 +615,7 @@ const CommentContainer = styled.div`
     }
   }
 
-  textarea {
+  input {
     width: 100%;
     height: 48px;
     min-height: 36px;
@@ -655,6 +768,32 @@ const ClassNote = styled.div`
 
     &:first-of-type {
       padding-top: 0px;
+    }
+  }
+`;
+
+const CommentComp = styled.div`
+  height: auto;
+  overflow: visible;
+`;
+
+const CommentListCont = styled.div`
+  .eachComment {
+    padding-top: 24px;
+    border-top: 1px solid rgb(237, 239, 240);
+
+    .eachBox {
+      display: flex;
+      flex-direction: column;
+
+      .cmtImg {
+        margin-bottom: 10px;
+      }
+    }
+
+    &:first-of-type {
+      padding-top: 0px;
+      border: none;
     }
   }
 `;

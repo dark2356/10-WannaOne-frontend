@@ -9,7 +9,7 @@ function LoginTitle({ setIsExpand }) {
     <div className="LoginTitle">
       <h1 className="loginHeader">
         <div className="loginHeaderBox">
-          <Link to="/main">
+          <Link to="/">
             <LoginTitleIcons />
           </Link>
           <div className="languageSelectBox">

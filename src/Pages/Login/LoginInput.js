@@ -56,7 +56,7 @@ function LoginInput() {
       .then((res) => {
         if (res.data.access_token) {
           sessionStorage.setItem("access_token", res.data.access_token);
-          history.push("/main");
+          history.push("/");
         } else {
           showError({
             backgroundColor: Colors.redError,
@@ -104,22 +104,6 @@ function LoginInput() {
       }
     });
   };
-
-  // const checkState = (res) => {
-  //   console.log(res);
-  //   if (res.status === "connected") {
-  //     getUsers();
-  //   } else {
-  //     window.FB.login();
-  //     console.log(res);
-  //   }
-  // };
-
-  // const getUsers = () => {
-  //   window.FB.api("/me", { fields: ["email", "name"] }, (response) => {
-  //     console.log(response);
-  //   });
-  // };
 
   return (
     <div className="LoginInput">

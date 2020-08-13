@@ -15,7 +15,7 @@ function ClassSummary({ detailData, reviewItems }) {
             {detailData.numberOfChapter}개 챕터, 37개 세부강의
           </dd>
           <dt className="summary">수강 가능일</dt>
-          <dd className="summary">{detailData.openDate}</dd>
+          <dd className="summary">{detailData.start_date}</dd>
           <dt className="summary">자막 포함 여부</dt>
           <dd className="summary">{detailData.subtitle}</dd>
         </dl>
@@ -40,7 +40,7 @@ function ClassSummary({ detailData, reviewItems }) {
               <Link to="/">
                 <dt>수강생 만족도</dt>
                 <dd>
-                  {detailData.satisfactory}
+                  {detailData.rate}
                   <span>%</span>
                 </dd>
               </Link>
