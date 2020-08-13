@@ -28,6 +28,6 @@ export const VIEW_CLASS_API_URL = "http://10.58.0.165:8000/product?category=5";
 export const MY_PAGE_API_URL = "http://10.58.0.165:8000/mypage";
 
 export const HEAD_COVER_MOCK = "http://localhost:3000/signatureProduct.json"
-export const HEAD_COVER_API_URL = "http://10.58.2.64:8000/product3"
+export const SIGNATURE_MODAL_API_URL = "http://10.58.2.64:8000/product/3"
 
 
