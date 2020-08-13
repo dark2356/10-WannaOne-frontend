@@ -1,0 +1,103 @@
+.packageInt {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  max-width: 960px;
+
+  .packTitle {
+    width: 100%;
+    margin: 48px 0 24px;
+
+    h3 {
+      color: rgb(237, 239, 240);
+    }
+  }
+
+  .packImgBox {
+    width: 100%;
+    height: 100%;
+
+    &.fold {
+      position: relative;
+      max-height: 384px;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 160px;
+        background-image: linear-gradient(
+          to top,
+          rgb(27, 28, 29) 0%,
+          rgba(27, 28, 29, 0.965) 7.3%,
+          rgba(27, 28, 29, 0.91) 14.3%,
+          rgba(27, 28, 29, 0.843) 21.1%,
+          rgba(27, 28, 29, 0.765) 27.7%,
+          rgba(27, 28, 29, 0.68) 34.1%,
+          rgba(27, 28, 29, 0.59) 40.5%,
+          rgba(27, 28, 29, 0.494) 46.8%,
+          rgba(27, 28, 29, 0.4) 53.2%,
+          rgba(27, 28, 29, 0.314) 59.5%,
+          rgba(27, 28, 29, 0.227) 65.9%,
+          rgba(27, 28, 29, 0.153) 72.3%,
+          rgba(27, 28, 29, 0.09) 78.9%,
+          rgba(27, 28, 29, 0.043) 85.7%,
+          rgba(27, 28, 29, 0.01) 92.7%,
+          rgba(27, 28, 29, 0) 100%
+        );
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &:first-child {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .moreReviewWrapper {
+    margin-top: 24px;
+
+    .moreReviewBox {
+      display: inline-flex;
+      vertical-align: middle;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      color: rgb(252, 61, 70);
+      cursor: pointer;
+
+      .plusIcon {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: center;
+        width: 18px;
+        height: 18px;
+        margin-right: 4px;
+      }
+
+      .boxTitle {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

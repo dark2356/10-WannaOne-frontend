@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "value": "PREVIEW",
+      "title": "클래스 소개"
+    },
+    {
+      "value": "CURRICULUM",
+      "title": "커리큘럼"
+    },
+    {
+      "value": "PACKAGE",
+      "title": "패키지"
+    },
+    {
+      "value": "DELIVERY",
+      "title": "배송"
+    },
+    {
+      "value": "BENEFIT",
+      "title": "혜택"
+    },
+    {
+      "value": "CREATOR",
+      "title": "크리에이터"
+    },
+    {
+      "value": "RECOMMEND",
+      "title": "추천"
+    },
+    {
+      "value": "REFUND",
+      "title": "환불 정책"
+    }
+  ]
+}

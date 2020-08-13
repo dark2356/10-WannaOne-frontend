@@ -1,0 +1,92 @@
+.NewClass {
+  position: relative;
+  margin: 10px 10px;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+  width: 276px;
+
+  .cardClassHeartContainer {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+
+    &:hover {
+      background-color: #808080;
+      border-radius: 20px;
+    }
+  }
+  .creativeClassCategory {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .cardClassIconFlex {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    margin: 5px 0;
+    padding-bottom: 10px;
+    color: #909090;
+    border-bottom: 1px solid #f8f8f9;
+
+    .cardClassIcon {
+      width: 12px;
+      height: 12px;
+      margin-right: 4px;
+    }
+
+    .cardClassIconlike {
+      width: 15px;
+      height: 15px;
+      margin: 0px 2px 0px 2px;
+    }
+  }
+
+  .ProductStateLabel {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 3px;
+    min-width: 20px;
+    height: 20px;
+    background-color: #f8f8f9;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-top: 10px;
+
+    .ProductState {
+      font-size: 10px;
+      color: #f33340;
+    }
+  }
+}
+
+.iVmqrj {
+  height: 10px;
+}
+.priceFlexBox {
+  display: flex;
+  font-size: 11px;
+  margin-top: 20px;
+}
+
+.price {
+  text-decoration: line-through;
+  margin-right: 5px;
+  color: rgb(133, 138, 141);
+}
+
+.discount {
+  color: rgb(243, 51, 64);
+}
+
+.payMonth {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 5px 0 0;
+}
+
+.month {
+  font-size: 11px;
+  font-weight: normal;
+}

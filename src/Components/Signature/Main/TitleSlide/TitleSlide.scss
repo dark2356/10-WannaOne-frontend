@@ -1,0 +1,84 @@
+.TitleSlide {
+  height: 890px;
+  background-color: black;
+  margin-bottom: 150px;
+
+  .mainContainer {
+    max-width: 1176px;
+    margin: 0 auto;
+
+    .MainItemContainer {
+      height: 810px;
+      margin: 0 auto;
+      object-fit: cover;
+      position: relative;
+      top: 20pxx;
+
+      .mainItemImg {
+        height: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+        border-style: none;
+        z-index: 2000;
+      }
+
+      .SignatureTitleDescription {
+        height: 244px;
+        width: 815px;
+        position: absolute;
+        bottom: 95px;
+        left: 0px;
+        color: white;
+        z-index: 1;
+
+        .DescriptionTextConatiner {
+          font-size: 70px;
+          font-weight: bold;
+
+          .producerText {
+            margin-left: 16px;
+            color: rgb(133, 138, 141);
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 28px;
+          }
+        }
+      }
+      .btnFlexBox {
+        display: flex;
+        align-items: center;
+
+        .teserButton {
+          width: 153px;
+          height: 48px;
+          display: inline-flex;
+          align-items: center;
+          margin-top: 16px;
+          font-size: 16px;
+          border-radius: 3px;
+          padding: 0px 20px;
+          transition: background-color 0.1s ease 0s;
+          background-color: rgb(62, 64, 66);
+          color: rgb(237, 239, 240);
+        }
+
+        .LearnButton {
+          width: 139px;
+          height: 48px;
+          margin-left: 20px;
+          color: rgb(255, 255, 255);
+          background-color: rgb(252, 61, 70);
+        }
+      }
+    }
+
+    .CarouselItemImg {
+      width: 246px;
+      height: 100%;
+      object-fit: cover;
+      vertical-align: middle;
+      border-style: none;
+      z-index: 2000;
+    }
+  }
+}

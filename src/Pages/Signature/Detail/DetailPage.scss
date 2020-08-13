@@ -1,0 +1,63 @@
+.DetailPage {
+  width: 100vw;
+  height: 100%;
+  background-color: rgb(27, 28, 29);
+  color: #fff;
+
+  .detailContainer {
+    max-width: 1176px;
+    padding-top: 24px;
+    margin: 0 auto;
+  }
+
+  .detailWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 -12px;
+
+    .detailBox {
+      width: 66.6667%;
+      min-height: 1px;
+      padding: 0 12px;
+      margin: 0 12px;
+
+      header {
+        position: sticky;
+        top: 0px;
+        z-index: 999;
+
+        .detailHeader {
+          box-shadow: none;
+          background-color: rgb(27, 28, 29);
+        }
+      }
+
+      .curriculum {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        .curiTitle {
+          margin-top: 48px;
+          color: rgb(237, 239, 240);
+        }
+
+        .curiBox {
+          width: 100%;
+          margin-bottom: 48px;
+
+          .curiInt {
+            margin: 12px 0 16px;
+            font-size: 14px;
+            line-height: 24px;
+            text-align: left;
+            color: rgb(237, 239, 240);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.footer {
+  padding: 32px 0px;
+  border-top: 1px solid #3d4042;
+  background-color: white;
+
+  .contentsContainer {
+    width: 1176px;
+    margin: 0 auto;
+    overflow: hidden;
+    .footerTitle {
+      display: flex;
+
+      .menuClassContainer {
+        width: 33.33%;
+        line-height: 16px;
+      }
+
+      .menuCreaterContainer {
+        width: 33.333%;
+      }
+
+      .serviceCenterContainer {
+        width: 33.3333%;
+
+        .serviceCenterTime {
+          margin-left: 5px;
+          font-size: 11px;
+          color: rgb(133, 138, 141);
+        }
+      }
+
+      .footerText {
+        margin-top: 8px;
+        font-size: 14px;
+        color: rgb(133, 138, 141);
+      }
+
+      .boldText {
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+
+  .footerInfoContainer {
+    margin-top: 32px;
+    display: flex;
+
+    .footerAgreementBox {
+      width: 33.3333%;
+      color: rgb(133, 138, 141);
+
+      .footerInc {
+        margin-bottom: 4px;
+        font-size: 11px;
+        font-weight: bold;
+        color: black;
+      }
+    }
+
+    .AgreementContainer {
+      margin-left: -23px;
+      font-size: 11px;
+      // color: #ffffff;
+      .AgreementLink {
+        display: inline-flex;
+      }
+
+      .AgreementLink::before {
+        display: block;
+        width: 24px;
+        text-align: center;
+        content: "|";
+      }
+    }
+
+    .footerInfoText {
+      width: 66.666%;
+      margin-top: 24px;
+      font-size: 11px;
+      line-height: 16px;
+      color: rgb(133, 138, 141);
+    }
+  }
+}

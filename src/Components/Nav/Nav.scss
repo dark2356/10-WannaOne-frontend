@@ -1,0 +1,54 @@
+@import "../../Styles/common.scss";
+
+.nav {
+  background: white;
+
+  .mainHaeder {
+    @include flex_between;
+    max-width: 1180px;
+    height: 68px;
+    margin: 0 auto;
+
+    .haederLeft {
+      display: flex;
+      align-items: center;
+
+      .mainLogo {
+        font-size: 22px;
+        margin-right: 29px;
+        font-weight: bold;
+      }
+
+      .searchController {
+        @include flex_between;
+        height: 40px;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 1px 0px,
+          rgba(41, 42, 43, 0.16) 0px 1px 3px 0px;
+        overflow: hidden;
+
+        .mainSearch {
+          padding: 0 10px;
+          font-size: 14px;
+          outline: none;
+        }
+
+        .searchActive {
+          width: 380px;
+          transition: all 0.6s cubic-bezier(0.42, 0, 0.2, 1) 0s;
+        }
+
+        .searchdeactivate {
+          width: 335px;
+          transition: all 0.6s cubic-bezier(0.42, 0, 0.2, 1) 0s;
+        }
+
+        .searchIcon {
+          width: 20px;
+          height: 20px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

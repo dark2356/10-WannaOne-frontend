@@ -1,0 +1,107 @@
+.curiList {
+  margin-top: 24px;
+
+  .curiContent {
+    display: flex;
+    width: 100%;
+
+    .curiContBox {
+      width: 220px;
+      margin-right: 24px;
+      flex: 0 0 auto;
+
+      .curiImgBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+
+        span {
+          display: block;
+          position: relative;
+          padding-top: 56.25%;
+          font-size: 0px;
+          overflow: hidden;
+
+          picture {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+
+    .curiTitleBox {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+
+      .curiListTitle {
+        display: inline-block;
+        margin-right: 12px;
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 28px;
+        color: rgb(168, 174, 179);
+
+        &.int {
+          display: inline;
+          color: rgb(237, 239, 240);
+        }
+      }
+
+      h3 {
+        width: 100%;
+        font-size: 20px;
+      }
+
+      .curiLink {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 12px;
+
+        .curiIcon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20px;
+          height: 20px;
+          margin: 0px 16px 0px 0px;
+          flex: 0 0 auto;
+          font-size: 11px;
+          font-weight: normal;
+          line-height: 16px;
+          letter-spacing: normal;
+          color: rgb(237, 239, 240);
+          background-color: rgb(62, 64, 66);
+          border-radius: 100%;
+        }
+
+        .missionItem {
+          font-size: 14px;
+          font-weight: normal;
+          line-height: 20px;
+          letter-spacing: -0.15px;
+          color: rgb(237, 239, 240);
+          margin: 0px;
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+
+  &:not(:nth-child(2)) {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgb(62, 64, 66);
+  }
+}

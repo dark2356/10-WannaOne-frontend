@@ -19,6 +19,7 @@ import {
   AppleLogin,
 } from "./LoginIcons";
 import { API_URL } from "../../Config";
+import { FB_API_URL } from "../../Config";
 import "./LoginInput.scss";
 
 function LoginInput() {
@@ -48,7 +49,7 @@ function LoginInput() {
     e.preventDefault();
     setIsSubmit(true);
     axios
-      .post(`${API_URL}/user/sign-in`, {
+      .post(`${API_URL}`, {
         email: form.email,
         password: form.password,
       })
@@ -95,24 +96,30 @@ function LoginInput() {
   };
 
   const checkLogin = () => {
-    window.FB.getLoginStatus((checkResponse) => {
-      checkState(checkResponse);
+    window.FB.getLoginStatus((res) => {
+      if (res.status === "connected") {
+        axios.post(`${FB_API_URL}`).then((res) => {
+          console.log(res);
+        });
+      }
     });
   };
 
-  const checkState = (checkResponse) => {
-    if (checkResponse.status === "connected") {
-      getUsers();
-    } else {
-      window.FB.login();
-    }
-  };
+  // const checkState = (res) => {
+  //   console.log(res);
+  //   if (res.status === "connected") {
+  //     getUsers();
+  //   } else {
+  //     window.FB.login();
+  //     console.log(res);
+  //   }
+  // };
 
-  const getUsers = () => {
-    window.FB.api("/me", { fields: ["email", "name"] }, (response) => {
-      console.log(response);
-    });
-  };
+  // const getUsers = () => {
+  //   window.FB.api("/me", { fields: ["email", "name"] }, (response) => {
+  //     console.log(response);
+  //   });
+  // };
 
   return (
     <div className="LoginInput">

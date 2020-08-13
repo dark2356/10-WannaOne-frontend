@@ -1,0 +1,35 @@
+.UpdateCardList {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  max-width: 1176px;
+  .openClassTitle {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 24px;
+  }
+  .CreativeCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .swiperContainer {
+    max-width: 1176px;
+    margin: 50px auto;
+  }
+  .hitClassTitle {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+  }
+}
+
+.updateTitleText {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.updateFlexBox {
+  display: inline-flex;
+  flex-wrap: wrap;
+}

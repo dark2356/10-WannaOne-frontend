@@ -1,0 +1,50 @@
+.CategoryViewContainer {
+}
+.CategoryView {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-top: 88px;
+  padding-bottom: 100px;
+}
+.CategoryTitleContainer {
+  display: flex;
+  margin-bottom: 64px;
+}
+.categoryTitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(27, 28, 29);
+  margin-left: 25px;
+}
+
+.CategoryTextContainer {
+  width: 1200px;
+  height: 424px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: stretch;
+}
+.creativeCategory {
+  width: 20%;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: rgb(27, 28, 29);
+}
+.creativeCategory div {
+  margin: 3px 0px;
+  width: 180px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+.creativeCategory div:hover {
+  background-color: #f2f2f2;
+}
+.creativeCategoryTitle {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

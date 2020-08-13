@@ -1,0 +1,59 @@
+.CreativeCardList {
+  margin-top: 50px;
+  max-width: 1180px;
+  margin: 0px auto;
+
+  .openClassTitle {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 24px;
+  }
+  .CreativeCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .swiperContainer {
+    max-width: 1176px;
+    margin: 50px auto;
+  }
+  .hitClassTitle {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+  }
+}
+
+.toTitleText {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.slick-arrow:not(:root) {
+  overflow: hidden;
+  //   z-index: 9999;
+  color: black;
+}
+.slick-next:not(:root) {
+  overflow: hidden;
+  //   z-index: 9999;
+}
+.slick-next::before {
+  overflow: visible;
+  //   z-index: 9999;
+}
+
+.newClassText {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: #858a8d;
+  margin-top: 5px;
+}
+
+.CategoryFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
