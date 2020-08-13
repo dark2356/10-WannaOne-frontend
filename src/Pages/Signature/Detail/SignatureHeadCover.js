@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import Modal from "./Modal";
-import { SIGNATURE_MOCKUP_DATA, SIGNATURE_API_URL } from "../../../Config";
+import { HEAD_COVER_MOCK, HEAD_COVER_API_URL } from "../../../Config";
 
 function SignatureHeadCover() {
   const [modalState, setModalState] = useState(false);
   const [product, setProduct] = useState({});
 
   const GetProudctData = () => {
-    fetch(`${SIGNATURE_MOCKUP_DATA}`)
+    fetch(`${HEAD_COVER_API_URL}`)
       .then(res => res.json())
       .then(res => setProduct(res))
   }

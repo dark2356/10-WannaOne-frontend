@@ -18,6 +18,7 @@ export const TABITEMS_URL = "http://localhost:3000/data/tabitems.json";
 export const DETAIL_DATA_URL = "http://localhost:3000/data/detailData.json";
 
 export const REVIEW_ITEMS_URL = "http://localhost:3000/data/reviewItems.json";
+
 export const SIGNATURE_API_URL = "http://10.58.0.165:8000/product?category=2";
 export const SIGNATURE_WISH_API_URL = "http://10.58.0.165:8000/product/dip";
 
@@ -25,5 +26,8 @@ export const WISH_CLASS_API_URL = "http://10.58.0.165:8000/product";
 export const VIEW_CLASS_API_URL = "http://10.58.0.165:8000/product?category=5";
 
 export const MY_PAGE_API_URL = "http://10.58.0.165:8000/mypage";
+
+export const HEAD_COVER_MOCK = "http://localhost:3000/signatureProduct.json"
+export const HEAD_COVER_API_URL = "http://10.58.2.64:8000/product3"
 
 
