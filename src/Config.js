@@ -2,7 +2,7 @@ export const API_URL = "http://10.58.1.236:8000/user/sign-in";
 
 export const SIGNUP_API_URL = "http://10.58.0.30:8000/user/sign-up";
 
-export const KAKAO_LOGIN_API_URL = "http://10.58.1.163:8000/user/sign-in/kakao";
+export const KAKAO_LOGIN_API_URL = "http://10.58.2.64:8000/user/sign-in/kakao";
 
 export const Class_Card_URL = "http://10.58.3.126:8000/product";
 
@@ -37,7 +37,7 @@ export const WISH_CLASS_API_URL = "http://10.58.2.64:8000/product";
 export const VIEW_CLASS_API_URL = "http://10.58.2.64:8000/product?category=5";
 
 export const MY_PAGE_API_URL = "http://10.58.2.64:8000/mypage";
-export const MY_PAGE_PROFILE_API_URL = "http://10.58.1.163:8000/user/mypage";
+export const MY_PAGE_PROFILE_API_URL = "http://10.58.2.64:8000/user/mypage";
 
 export const SIGNATURE_MODAL_API_URL = "http://10.58.2.64:8000/product/3"
 

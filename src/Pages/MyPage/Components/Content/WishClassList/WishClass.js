@@ -26,7 +26,6 @@ function WishClass({
   installment,
   start_date,
   satisfactory,
-  dataHandler,
   setWishAmout,
   wishAmount,
   getData,
@@ -40,6 +39,9 @@ function WishClass({
       !isWishAdd && setWishAmout(wishAmount - 1)
       fetch(`${SIGNATURE_WISH_API_URL}`, {
         method: "POST",
+        headers: {
+          "Authorization": localStorage.getItem("access_token")
+        },
         body: JSON.stringify({
           user_id: 8,
           product_id,

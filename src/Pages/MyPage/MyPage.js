@@ -7,32 +7,39 @@ import WishClassList from "./Components/Content/WishClassList/WishClassList"
 import MyPageNav from "./Components/MyPageNav/MyPageNav";
 import MyPageFooter from "./Components/MyPageFooter/MyPageFooter";
 import { MY_PAGE_API_URL, MY_PAGE_PROFILE_API_URL } from "../../Config";
+// rebase
 
 function MyPage() {
   const [data, setData] = useState([]);
   const [wishAmount, setWishAmout] = useState(0)
   const [userInfo, setUserInfo] = useState({})
 
-  useEffect(() => {
+  const getUserInfo = () => {
     fetch(`${MY_PAGE_PROFILE_API_URL}`, {
       method: "GET",
       headers: {
-        "Authorization": localStorage.getItem("Kakao_token")
+        Authorization: localStorage.getItem("access_token")
       }
     })
       .then(res => res.json())
-      .then(res => setUserInfo(res.data))
-  }, [])
-
+      .then(res => {
+        setUserInfo(res.data)
+      })
+  }
 
   useEffect(() => {
+    getUserInfo()
     getData()
     getWishAmout()
   }, []);
 
   const getData = () => {
     setTimeout(() => {
-      fetch(`${MY_PAGE_API_URL}`)
+      fetch(`${MY_PAGE_API_URL}`, {
+        headers: {
+          Authorization: localStorage.getItem("access_token")
+        }
+      })
         .then((res) => res.json())
         .then((res) => {
           setData(res.dipClass);
@@ -41,14 +48,17 @@ function MyPage() {
   }
 
   const getWishAmout = () => {
-    fetch(`${MY_PAGE_API_URL}`)
+    fetch(`${MY_PAGE_API_URL}`, {
+      headers: {
+        Authorization: localStorage.getItem("access_token")
+      }
+    })
       .then((res) => res.json())
       .then((res) => {
         setWishAmout(res.dips);
       });
   }
 
-  console.log("MY_PAGE_API_URL: ", data)
   return (
     <MyPageContainer>
       <MyPageNav />

@@ -22,6 +22,7 @@ function MyViewClassList({ getData, setWishAmout, wishAmount }) {
         setData(res.data);
       });
   }, []);
+
   return (
     <section className="MyViewClassList">
       <section className="classCardContainer">

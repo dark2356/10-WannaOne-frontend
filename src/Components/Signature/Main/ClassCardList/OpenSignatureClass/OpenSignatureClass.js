@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { Icon, Colors, Card } from "@class101/ui";
 import "./OpenSignatureClass.scss";
-import { SIGNATURE_WISH_API_URL } from "../../../../../Config.js";
+import { SIGNATURE_WISH_API_URL, MY_PAGE_PROFILE_API_URL } from "../../../../../Config.js";
+//삭제 예정
 
 function OpenSignatureClass({
   dipStatus,
@@ -19,13 +20,15 @@ function OpenSignatureClass({
     setIsWishAdd(!isWishAdd);
     fetch(`${SIGNATURE_WISH_API_URL}`, {
       method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("access_token")
+      },
       body: JSON.stringify({
-        user_id: 8,
         product_id,
-        dipStatus,
-      }),
-    });
-  };
+      })
+    })
+  }
+
   return (
     <section
       className="OpenSignatureClass"
@@ -39,8 +42,7 @@ function OpenSignatureClass({
         <div className="cardClassHeartContainer" onClick={wishAddHandler}>
           <Icon.Heart
             fillColor={Colors.white}
-            fill
-            className={isWishAdd && dipStatus ? "onIcon" : "icon"}
+            fill className={isWishAdd ? "onIcon" : "icon"}
           />
         </div>
       </span>
