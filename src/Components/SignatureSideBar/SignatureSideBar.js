@@ -6,13 +6,13 @@ import SummaryOptions from "./Components/SummaryOptions";
 import WishShare from "./Components/WishShare";
 import ClassApplyBtn from "./Components/ClassApplyBtn";
 import Class101IntroductionBanner from "./Components/Class101IntroductionBanner";
-import { SIGNATURE_API_URL } from "../../Config";
+import { DETAIL_DATA_URL } from "../../Config";
 
-function SignatureSideBar() {
+function SignatureSideBar({ isCouponClicked, setIsCouponClicked }) {
   const [productInfo, setProductInfo] = useState({})
 
   useEffect(() => {
-    fetch(`${SIGNATURE_API_URL}`)
+    fetch(`${DETAIL_DATA_URL}`)
       .then(res => res.json())
       .then(res => setProductInfo(res))
   }, [])
@@ -28,7 +28,10 @@ function SignatureSideBar() {
           <Label productInfo={productInfo} />
         </div>
         <div className="priceInfoBox">
-          <ProductPriceInfo />
+          <ProductPriceInfo
+            isCouponClicked={isCouponClicked}
+            setIsCouponClicked={setIsCouponClicked}
+          />
         </div>
         <SummaryOptions productInfo={productInfo} />
         <WishShare />

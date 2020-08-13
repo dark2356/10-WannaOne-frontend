@@ -82,7 +82,7 @@ function ViewClass({
           <span className="discountPercent">{discount_rate}%</span>
         </div>
         <div className="payMonth">
-          <strong className="pay">월 {monthPrice}원</strong>
+          <strong className="pay">월 {monthPrice.slice(0, monthPrice.indexOf('.'))}원</strong>
           <span className="month">({installment}개월)</span>
         </div>
         <Badge
