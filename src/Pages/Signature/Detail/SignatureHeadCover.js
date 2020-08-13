@@ -11,10 +11,10 @@ function SignatureHeadCover() {
 
   const topPics = product.topPictures;
 
-  const reArrangeSlider = (url, arr) => {
-    const findNum = arr.indexOf(url)
-    const numStartArr = arr.slice(findNum)
-    const numEndArr = arr.slice(0, findNum)
+  const reArrangeSlider = (idx, arr) => {
+    const findIdx = arr.indexOf(idx)
+    const numStartArr = arr.slice(findIdx)
+    const numEndArr = arr.slice(0, findIdx)
     const result = numStartArr.concat(numEndArr);
     return result
   }
@@ -92,6 +92,7 @@ const SubViewTop = styled.div`
   height: 380px;
 `
 const SubViewTopImage = styled.img`
+  cursor: pointer;
   width: 100%;
   height: 100%;
   object-fit: cover;
