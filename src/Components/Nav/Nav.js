@@ -1,23 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Icon } from "@class101/ui";
+import NavLogo from "./NavLogo/NavLogo";
+import Login from "../../Pages/Login/Login";
+import NavRight from "../../Components/Nav/NavRight";
+import { withRouter, Link, useHistory } from "react-router-dom";
+import { Icon, Colors } from "@class101/ui";
 import "./Nav.scss";
 
-function Nav({ color, background, backgroundColor }) {
+function Nav({ color, background, backgroundColor, LogoColor, NavRightColor }) {
   const [isSeachActive, isSetSearchState] = useState(false);
+  const [isProfile, isSetProfileState] = useState(false);
+  const history = useHistory();
+
+  const logoutHandler = (e) => {
+    localStorage.removeItem("Kakao_token");
+    localStorage.removeItem("kakao_02968fb885dd1157ed15437185cb6582");
+    localStorage.removeItem("access_token");
+    history.push("/login");
+  };
+
   return (
     <div className="nav" style={{ background }}>
       <div className="mainHaeder">
         <div className="haederLeft">
           <div className="mainLogo" style={{ color }}>
-            CLASS1O1
+            <NavLogo className="mainLogo" color={LogoColor} />
           </div>
           <div className="searchController" style={{ backgroundColor }}>
             <input
               type="search"
               size="sm"
               placeholder="배우고 싶은 것이 있나요?"
-              style={{ backgroundColor }}
+              style={{ backgroundColor, color }}
               className={`mainSearch 
                 ${isSeachActive ? "searchActive" : "searchdeactivate"}`}
               onFocus={() => isSetSearchState(!isSeachActive)}
@@ -25,17 +38,9 @@ function Nav({ color, background, backgroundColor }) {
             <Icon.Search fillColor={color} className="searchIcon" />
           </div>
         </div>
-        <div className="haederRight">
-          <a className="navigationLink" style={{ color }}>
-            크리에이터 지원
-          </a>
-          <a className="navigationLogin" style={{ color }}>
-            <Link to="/login">로그인</Link>
-          </a>
-        </div>
+        <NavRight color={NavRightColor} />
       </div>
     </div>
   );
 }
-
-export default Nav;
+export default withRouter(Nav);

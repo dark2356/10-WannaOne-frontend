@@ -24,7 +24,7 @@ function Modal({ state, closeModal, product }) {
         <Body>
           <Slider {...settings}>
             {product.topPictures && product.topPictures.map((el, i) => (
-              <Image src={el} key={i} />
+              <Image src={el} key={i} idx={i} />
             ))}
           </Slider>
         </Body>

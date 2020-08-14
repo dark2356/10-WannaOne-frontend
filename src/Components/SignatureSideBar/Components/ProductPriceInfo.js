@@ -72,13 +72,16 @@ const ProductPriceInfoContainer = styled.section`
     }
   }
 `;
+
 const PriceInfo = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 const Installment = styled.div`
   font-size: 14px;
 `;
+
 const DiscountAndPrice = styled.div`
   display: flex;
   align-items: center;
@@ -94,6 +97,7 @@ const DiscountAndPrice = styled.div`
     font-size: 18px;
   }
 `;
+
 const MaxBenefitCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -154,4 +158,5 @@ const MaxBenefitCard = styled.div`
     }
   }
 `;
+
 export default ProductPriceInfo;

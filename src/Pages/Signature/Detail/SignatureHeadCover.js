@@ -2,11 +2,22 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import Modal from "./Modal";
-import { SIGNATURE_MOCKUP_DATA, SIGNATURE_MODAL_API_URL } from "../../../Config";
+import { DETAIL_DATA_URL, SIGNATURE_MODAL_API_URL } from "../../../Config";
 
 function SignatureHeadCover() {
   const [modalState, setModalState] = useState(false);
   const [product, setProduct] = useState({});
+  const [modalProduct, setModalProduct] = useState({});
+
+  const topPics = product.topPictures;
+
+  const reArrangeSlider = (idx, arr) => {
+    const findIdx = arr.indexOf(idx)
+    const numStartArr = arr.slice(findIdx)
+    const numEndArr = arr.slice(0, findIdx)
+    const result = numStartArr.concat(numEndArr);
+    return result
+  }
 
   const GetProudctData = () => {
     fetch(`${SIGNATURE_MODAL_API_URL}`)
@@ -18,32 +29,37 @@ function SignatureHeadCover() {
     GetProudctData();
   }, [])
 
+  const handleModalState = (idx) => {
+    const result = { ...product, topPictures: reArrangeSlider(topPics[idx], topPics) }
+
+    setModalProduct(result)
+    setModalState(true)
+  }
+
   return (
     <SignatureHeadCoverWrapper>
       <SignatureHeadCoverContainer>
-        <SignatureHeadCoverWrap
-          onClick={() => setModalState(true)}
-        >
+        <SignatureHeadCoverWrap>
           <TitleViewWrap>
-            <TitleViewImage src={product.topPictures && product.topPictures[0]} />
+            <TitleViewImage src={product.topPictures && product.topPictures[0]} onClick={() => handleModalState(0)} />
           </TitleViewWrap>
           <SubViewWrap>
             <SubViewTop>
-              <SubViewTopImage src={product.topPictures && product.topPictures[1]} />
+              <SubViewTopImage src={product.topPictures && product.topPictures[1]} onClick={() => handleModalState(1)} />
             </SubViewTop>
             <SubViewBottom>
               <SubViewBottomImage>
                 <div className="left imageBox">
-                  <img className="leftImg" src={product.topPictures && product.topPictures[2]} alt="productImg" />
+                  <img className="leftImg" src={product.topPictures && product.topPictures[2]} alt="productImg" onClick={() => handleModalState(2)} />
                 </div>
                 <div className="right imageBox">
-                  <img className="rightImg" src={product.topPictures && product.topPictures[3]} alt="productImg" />
+                  <img className="rightImg" src={product.topPictures && product.topPictures[3]} alt="productImg" onClick={() => handleModalState(3)} />
                 </div>
               </SubViewBottomImage>
             </SubViewBottom>
           </SubViewWrap>
         </SignatureHeadCoverWrap>
-        <Modal state={modalState} closeModal={() => setModalState(false)} product={product} />
+        <Modal state={modalState} closeModal={() => setModalState(false)} product={modalProduct} />
       </SignatureHeadCoverContainer>
     </SignatureHeadCoverWrapper>
   );
@@ -83,6 +99,7 @@ const SubViewTop = styled.div`
   height: 380px;
 `
 const SubViewTopImage = styled.img`
+  cursor: pointer;
   width: 100%;
   height: 100%;
   object-fit: cover;
