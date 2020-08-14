@@ -103,79 +103,79 @@ function DetailPage() {
       <SignatureHeadCover />
       {curiItems.length && (
         <>
-        <SignatureHeadCover />
-        <div className="DetailPage">
-          <div className="detailContainer">
-            <div className="detailWrapper">
-              <div className="detailBox">
-                <header>
-                  <Tabs
-                    value={currentValue}
-                    theme={Theme.dark}
-                    type="red"
-                    className="detailHeader"
-                    onChange={handleChange}
+          <SignatureHeadCover />
+          <div className="DetailPage">
+            <div className="detailContainer">
+              <div className="detailWrapper">
+                <div className="detailBox">
+                  <header>
+                    <Tabs
+                      value={currentValue}
+                      theme={Theme.dark}
+                      type="red"
+                      className="detailHeader"
+                      onChange={handleChange}
+                    >
+                      {tabItems.map((el, i) => {
+                        return (
+                          <Tabs.Item
+                            value={el.value}
+                            title={el.title}
+                            key={i}
+                            onClick={scrollToRef}
+                          />
+                        );
+                      })}
+                    </Tabs>
+                  </header>
+                  <ClassSummary
+                    detailData={detailData}
+                    reviewItems={reviewItems}
+                  />
+                  <ProductView
+                    productData={productData}
+                    focusTarget={focusTarget}
+                  />
+                  <IntroSection />
+                  <div
+                    className="curriculum"
+                    ref={(el) => (focusTarget.current[1] = el)}
                   >
-                    {tabItems.map((el, i) => {
-                      return (
-                        <Tabs.Item
-                          value={el.value}
-                          title={el.title}
-                          key={i}
-                          onClick={scrollToRef}
-                        />
-                      );
-                    })}
-                  </Tabs>
-                </header>
-                <ClassSummary
-                  detailData={detailData}
-                  reviewItems={reviewItems}
-                />
-                <ProductView
-                  productData={productData}
-                  focusTarget={focusTarget}
-                />
-                <IntroSection />
-                <div
-                  className="curriculum"
-                  ref={(el) => (focusTarget.current[1] = el)}
-                >
-                  <Headline3 className="curiTitle">커리큘럼</Headline3>
-                  <div className="curiBox">
-                    <div className="curiInt">
-                      클래스를 신청하신 분들이 배우고 있는 커리큘럼입니다.
-                      콘텐츠는 배우기 쉽게 영상, 수업노트, 첨부파일로
-                      구성되어있습니다.
+                    <Headline3 className="curiTitle">커리큘럼</Headline3>
+                    <div className="curiBox">
+                      <div className="curiInt">
+                        클래스를 신청하신 분들이 배우고 있는 커리큘럼입니다.
+                        콘텐츠는 배우기 쉽게 영상, 수업노트, 첨부파일로
+                        구성되어있습니다.
                     </div>
-                    <Curriculum data={curiItems} />
+                      <Curriculum data={curiItems} />
+                    </div>
                   </div>
+                  <Package
+                    focusTarget={focusTarget}
+                    detailData={detailData}
+                    isFold={isFold}
+                    handleClick={handleClick}
+                  />
+                  <Delivery focusTarget={focusTarget} />
+                  <Benefit
+                    focusTarget={focusTarget}
+                    isCouponClicked={isCouponClicked}
+                    setIsCouponClicked={setIsCouponClicked}
+                    detailData={detailData}
+                  />
+                  <Creator focusTarget={focusTarget} />
+                  <Recommend focusTarget={focusTarget} />
+                  <Refund focusTarget={focusTarget} />
                 </div>
-                <Package
-                  focusTarget={focusTarget}
-                  detailData={detailData}
-                  isFold={isFold}
-                  handleClick={handleClick}
-                />
-                <Delivery focusTarget={focusTarget} />
-                <Benefit
-                  focusTarget={focusTarget}
+                <SignatureSideBar
                   isCouponClicked={isCouponClicked}
                   setIsCouponClicked={setIsCouponClicked}
-                  detailData={detailData}
                 />
-                <Creator focusTarget={focusTarget} />
-                <Recommend focusTarget={focusTarget} />
-                <Refund focusTarget={focusTarget} />
               </div>
-              <SignatureSideBar
-                isCouponClicked={isCouponClicked}
-                setIsCouponClicked={setIsCouponClicked}
-              />
             </div>
+            <FloatingBtn scrollToTop={scrollToTop} />
           </div>
-          <FloatingBtn scrollToTop={scrollToTop} />
-        </div>
         </>
       )}
       <Footer color="white" background="#1b1c1d" />

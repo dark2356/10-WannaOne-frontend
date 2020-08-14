@@ -34,10 +34,11 @@ function ViewClass({
     !heartState ? setHeartState(true) : setHeartState(false)
     fetch(`${SIGNATURE_WISH_API_URL}`, {
       method: "POST",
+      headers: {
+        "Authorization": localStorage.getItem("access_token")
+      },
       body: JSON.stringify({
-        user_id: 8,
         product_id,
-        dipStatus: heartState,
       })
     })
       .then(getData())
@@ -103,4 +104,5 @@ function ViewClass({
     </section>
   );
 }
+
 export default withRouter(ViewClass);
