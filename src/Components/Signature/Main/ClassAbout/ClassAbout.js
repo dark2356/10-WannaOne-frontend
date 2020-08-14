@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./ClassAbout.scss";
 
 function ClassAbout() {
@@ -12,7 +12,7 @@ function ClassAbout() {
             <div className="aboutSection">CLASS101</div>
             SIGNATURE
           </h1>
-          <div class="aboutSectionSubTitle">
+          <div className="aboutSectionSubTitle">
             당신의 꿈이 더이상 꿈으로 머무르지 않도록,
             <br /> 각 분야 최고의 크리에이터들과 시작해보세요.
           </div>

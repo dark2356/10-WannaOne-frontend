@@ -6,7 +6,7 @@
   color: rgb(27, 28, 29);
   cursor: pointer;
   font-size: 14px;
-  z-index:9999;
+  z-index: 9999;
 
   .wishContainer {
     display: flex;
@@ -61,10 +61,10 @@
     }
   }
 
-  .icon { 
+  .icon {
     width: 24px;
     path {
-      fill: rgb(237, 239, 240);
+      fill: #fff;
     }
   }
 

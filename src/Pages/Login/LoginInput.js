@@ -55,7 +55,7 @@ function LoginInput() {
       })
       .then((res) => {
         if (res.data.access_token) {
-          sessionStorage.setItem("access_token", res.data.access_token);
+          localStorage.setItem("access_token", res.data.access_token);
           history.push("/");
         } else {
           showError({

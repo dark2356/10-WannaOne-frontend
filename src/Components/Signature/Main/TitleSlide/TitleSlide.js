@@ -34,7 +34,7 @@ export default class TitleSlide extends Component {
   render() {
     const { data } = this.state;
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
     };

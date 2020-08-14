@@ -6,7 +6,7 @@
 /* eslint no-restricted-globals: ["off"] */
 
 import React, { useState } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Icon, Colors, Card, Caption1, Badge, Divider } from "@class101/ui";
 import "./WishClass.scss";
 import { SIGNATURE_WISH_API_URL } from "../../../../../Config";
@@ -34,7 +34,7 @@ function WishClass({
   const [isWishAdd, setIsWishAdd] = useState(false)
 
   const wishAddHandler = () => {
-    if (confirm("정말로 취소하시겠습니까? 알림 및 혜택을 받지 못하실 수 있습니다.") == true) {
+    if (confirm("정말로 취소하시겠습니까? 알림 및 혜택을 받지 못하실 수 있습니다.") === true) {
       setIsWishAdd(!isWishAdd)
       !isWishAdd && setWishAmout(wishAmount - 1)
       fetch(`${SIGNATURE_WISH_API_URL}`, {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import ViewClass from "./ViewClass";
-import { WISH_CLASS_API_URL, VIEW_CLASS_API_URL } from "../../../../../Config";
+import { VIEW_CLASS_API_URL } from "../../../../../Config";
 import "./MyViewClassList.scss";
 
 function MyViewClassList({ getData, setWishAmout, wishAmount }) {

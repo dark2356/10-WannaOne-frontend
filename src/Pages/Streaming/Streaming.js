@@ -19,8 +19,8 @@ import "moment/locale/ko";
 import {
   STREAMING_URL,
   STREAMING_COMMENT_URL,
-  STREAMING_COMMENT_MOCK_URL,
   COMMENT_DELETE_URL,
+  MY_PAGE_PROFILE_API_URL
 } from "../../Config";
 import Nav from "../../Components/Nav/Nav";
 import FloatingBtn from "../../Components/Nav/FloatingBtn";
@@ -32,9 +32,14 @@ function Streaming() {
   const [classData, setClassData] = useState([]);
   const [files, setFiles] = useState([]);
   const [commentValue, setCommentValue] = useState("");
+  const [userInfo, setUserInfo] = useState({})
 
   useEffect(() => {
-    axios.get(STREAMING_URL).then((res) => {
+    axios.get(STREAMING_URL, {
+      headers: {
+        Authorization: localStorage.getItem("access_token")
+      }
+    }).then((res) => {
       const newCommentData = res.data.comment.sort((a, b) => {
         return (
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
@@ -43,7 +48,21 @@ function Streaming() {
       setCommentData(newCommentData);
       setClassData(res.data);
     });
+    getUserInfo()
   }, [commentData]);
+
+  const getUserInfo = () => {
+    fetch(`${MY_PAGE_PROFILE_API_URL}`, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("access_token")
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        setUserInfo(res.data)
+      })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +75,7 @@ function Streaming() {
       method: "post",
       url: STREAMING_COMMENT_URL,
       data: formData,
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "multipart/form-data", Authorization: localStorage.getItem("access_token") }
     });
     setCommentValue("");
     setFiles([]);
@@ -64,7 +83,11 @@ function Streaming() {
 
   const deleteComment = (e) => {
     const target = e.target.parentNode.parentNode.id;
-    axios.get(COMMENT_DELETE_URL + target).then(() => {});
+    axios.get(COMMENT_DELETE_URL + target, {
+      headers: {
+        Authorization: localStorage.getItem("access_token")
+      }
+    })
   };
 
   const handleUpload = (e) => {

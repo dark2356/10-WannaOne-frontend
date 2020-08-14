@@ -5,7 +5,7 @@ export default function NaverIcon() {
   return (
     <span className="NaverIcon">
       <a href="https://post.naver.com/class101_official">
-        <span class="footerSocialButton">
+        <span className="footerSocialButton">
           <svg width="20" height="20" viewBox="0 0 20 20">
             <path
               fill="#edeff0"
