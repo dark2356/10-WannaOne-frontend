@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import OpenSignatureClass from "./OpenSignatureClass/OpenSignatureClass";
 import { SIGNATURE_MAIN_URL } from "../../../../Config";
 import "./ClassCardList.scss";

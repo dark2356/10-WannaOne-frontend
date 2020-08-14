@@ -1,15 +1,14 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
-import { Icon, Colors, Card } from "@class101/ui";
+import { withRouter } from "react-router-dom";
 import "./NavLogo.scss";
 
 function NavLogo({ color }) {
   return (
     <>
-      <span class="MainHeader">
+      <span className="MainHeader">
         <a href="/">
           <svg
-            class="MainLogoSvg"
+            className="MainLogoSvg"
             width="100%"
             height="100%"
             viewBox="0 0 150 32"

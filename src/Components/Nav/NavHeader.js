@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Icon, Colors } from "@class101/ui";
+import React from "react";
+import { Icon } from "@class101/ui";
 
 import "./NavHeader.scss";
 
 function NavHaeder({ color, backgroundColor }) {
-  const categoryHandler = (e) => {
-    this.props.history.push("/category");
-  };
-
   return (
     <div className="NavHeader" style={{ backgroundColor }}>
       <div className="MainNav" style={{ color }}>

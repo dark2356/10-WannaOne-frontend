@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavLogo from "./NavLogo/NavLogo";
-import Login from "../../Pages/Login/Login";
 import NavRight from "../../Components/Nav/NavRight";
-import { withRouter, Link, useHistory } from "react-router-dom";
-import { Icon, Colors } from "@class101/ui";
+import { withRouter } from "react-router-dom";
+import { Icon } from "@class101/ui";
+import { MY_PAGE_PROFILE_API_URL } from '../../Config';
 import "./Nav.scss";
 
 function Nav({ color, background, backgroundColor, LogoColor, NavRightColor }) {
   const [isSeachActive, isSetSearchState] = useState(false);
-  const [isProfile, isSetProfileState] = useState(false);
-  const history = useHistory();
+  const [userInfo, setUserInfo] = useState({})
 
-  const logoutHandler = (e) => {
-    localStorage.removeItem("Kakao_token");
-    localStorage.removeItem("kakao_02968fb885dd1157ed15437185cb6582");
-    localStorage.removeItem("access_token");
-    history.push("/login");
-  };
+  const getUserInfo = () => {
+    fetch(`${MY_PAGE_PROFILE_API_URL}`, {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("access_token")
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        setUserInfo(res.data)
+      })
+  }
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
   return (
     <div className="nav" style={{ background }}>
@@ -38,7 +47,7 @@ function Nav({ color, background, backgroundColor, LogoColor, NavRightColor }) {
             <Icon.Search fillColor={color} className="searchIcon" />
           </div>
         </div>
-        <NavRight color={NavRightColor} />
+        <NavRight color={NavRightColor} userInfo={userInfo} />
       </div>
     </div>
   );

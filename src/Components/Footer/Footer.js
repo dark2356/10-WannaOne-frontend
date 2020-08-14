@@ -37,7 +37,7 @@ function Footer({ color, background, kakaoBtnColor, kakaoBtnColorBack }) {
         </div>
         <div className="footerInfoContainer">
           <div className="footerAgreementBox">
-            <div className="footerInc">Class inc.</div>
+            <div className="footerInc" style={{ color }}>Class101 Inc.</div>
             <div className="AgreementContainer">
               <div className="AgreementLink">이용약관</div>
               <div className="AgreementLink">개인 정보 처리 방침</div>

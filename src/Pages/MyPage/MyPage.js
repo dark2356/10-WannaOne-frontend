@@ -4,10 +4,9 @@ import ProfileCard from "./Components/LeftAside/ProfileCard/ProfileCard";
 import MyAttendance from "./Components/LeftAside/MyAttendance/MyAttendance";
 import MyViewClassList from "./Components/Content/MyViewClassList/MyViewClassList"
 import WishClassList from "./Components/Content/WishClassList/WishClassList"
-import MyPageNav from "./Components/MyPageNav/MyPageNav";
-import MyPageFooter from "./Components/MyPageFooter/MyPageFooter";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
 import { MY_PAGE_API_URL, MY_PAGE_PROFILE_API_URL } from "../../Config";
-// rebase
 
 function MyPage() {
   const [data, setData] = useState([]);
@@ -61,7 +60,7 @@ function MyPage() {
 
   return (
     <MyPageContainer>
-      <MyPageNav />
+      <Nav />
       <MypageWrapper>
         <LeftAside>
           <ProfileCard wishAmount={wishAmount} userInfo={userInfo} />
@@ -73,7 +72,8 @@ function MyPage() {
           <WishClassList data={data} getData={getData} setWishAmout={setWishAmout} wishAmount={wishAmount} />
         </Content>
       </MypageWrapper>
-      <MyPageFooter />
+      <Footer color="#1b1c1d" background="white" kakaoBtnColor="#1C1D1E"
+        kakaoBtnColorBack="white"/>
     </MyPageContainer>
   );
 }

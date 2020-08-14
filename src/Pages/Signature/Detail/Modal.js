@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import styled, { css } from "styled-components";
 import { Icon, Colors } from '@class101/ui';

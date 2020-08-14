@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { withRouter, Link, useHistory } from "react-router-dom";
-import { Icon, Colors } from "@class101/ui";
-import NavLogo from "./NavLogo/NavLogo";
+import { Icon } from "@class101/ui";
 import "./NavRight.scss";
 
-function Nav({ color }) {
+function Nav({ color, userInfo }) {
   const [isProfile, isSetProfileState] = useState(false);
   const history = useHistory();
 
-  const logoutHandler = (e) => {
+  const logoutHandler = () => {
     localStorage.removeItem("Kakao_token");
     localStorage.removeItem("kakao_02968fb885dd1157ed15437185cb6582");
     localStorage.removeItem("access_token");
@@ -40,14 +39,17 @@ function Nav({ color }) {
           <div className="navigationLink" style={{ color }}>
             내 쿠폰
           </div>
+          <Link to="/mypage">
           <div className="navigationLink" style={{ color }}>
             내 클래스
           </div>
+          </Link>
           <div
             className="profileBtnContainer"
             onClick={() => isSetProfileState(!isProfile)}
           >
             <img
+              alt="profile"
               src="https://ssl.pstatic.net/static/pwe/address/img_profile.png"
               className="profileImage"
             />
@@ -60,16 +62,17 @@ function Nav({ color }) {
             <div className="myProfileContainer">
               <span>
                 <img
+                  alt="profile"
                   src="https://ssl.pstatic.net/static/pwe/address/img_profile.png"
                   className="profileImage"
                 />
               </span>
               <div>
-                <div className="profileName">이윤식</div>
+                <div className="profileName">{userInfo.user_name}</div>
                 <span className="profileMypage">
                   <Link to="/mypage">
                     <span>마이페이지</span>
-                  </Link>
+                  </Link> 
                 </span>
               </div>
             </div>

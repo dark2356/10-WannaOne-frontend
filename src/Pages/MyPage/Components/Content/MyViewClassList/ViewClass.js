@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Icon, Colors, Card, Caption1, Badge, Divider } from "@class101/ui";
 import { SIGNATURE_WISH_API_URL } from "../../../../../Config";
 import "./ViewClass.scss";

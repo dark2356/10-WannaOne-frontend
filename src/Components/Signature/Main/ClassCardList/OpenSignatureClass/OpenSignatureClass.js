@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { Icon, Colors, Card } from "@class101/ui";
 import "./OpenSignatureClass.scss";
-import { SIGNATURE_WISH_API_URL, MY_PAGE_PROFILE_API_URL } from "../../../../../Config.js";
-//삭제 예정
+import { SIGNATURE_WISH_API_URL } from "../../../../../Config.js";
 
 function OpenSignatureClass({
   dipStatus,
@@ -16,6 +15,7 @@ function OpenSignatureClass({
   like,
 }) {
   const [isWishAdd, setIsWishAdd] = useState(false);
+
   const wishAddHandler = () => {
     setIsWishAdd(!isWishAdd);
     fetch(`${SIGNATURE_WISH_API_URL}`, {
@@ -37,7 +37,7 @@ function OpenSignatureClass({
     >
       <span>
         <Link to="/detail">
-          <Card title="아이패드 드로잉" coverImage={image_src} external />
+          <Card title="디지털 드로잉" coverImage={image_src} external />
         </Link>
         <div className="cardClassHeartContainer" onClick={wishAddHandler}>
           <Icon.Heart
@@ -63,4 +63,5 @@ function OpenSignatureClass({
     </section>
   );
 }
+
 export default withRouter(OpenSignatureClass);

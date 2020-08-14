@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components"
 import { Button, Icon, ButtonSize, Colors } from '@class101/ui';
 import { SIGNATURE_WISH_API_URL } from "../../../Config";
