@@ -1,38 +1,54 @@
-# Wecode Class 101 클론코딩 프로젝트(Front-end)
+# WeCode Dr.Jart+ 클론코딩 프로젝트 (Front-End)
 
-### (엄격, 근엄, 진지)
+## 프로젝트 소개🙌
 
-**master 브랜치는 신성불가침의 영역입니다**
+- '준비물까지 챙겨주는 온라인 클래스'라는 슬로건을 포함해 공격적인 마케팅으로 최근 떠오르는 취미 플랫폼 Class101 클론 코딩
 
-## 팀원
+## 개발 기간📆
+
+- 2020년 8월 3일 ~ 2020년 8월 14일(12일)
+
+## 팀원🐙
 
 - 10기 신영재
 - 10기 배정규
 - 10기 이윤식
 
-## 작업현황
+## 개발 목적🧾📈
 
-### 10기 신영재
+- React Hooks를 이용해 함수형 컴포넌트에서는 React가 어떤식으로 작동하는지 익힌다.
+- useEffect를 이용해 라이크사이클에 대해 심화된 내용에 대해 학습한다.
+- Agile 방법론을 적용하여 효율적인 협업 프로젝트를 진행해본다.
 
-- [ ] 로그인 페이지
-- [ ] Sass Nesting
+## 기술 스택 및 구현 기능🛠
 
-### 10기 배정규
+### 기술 스택
 
-- [ ] 회원가입 페이지
-- [ ] Sass Nesting
+- React.js
+- React Router
+- React Hooks
+- RESTful API
+- Scss
+- Styled Component
+- Slick.js
+- Moment.js
+- Class101 UI Package
 
-### 10기 이윤식
+### 구현 기능
 
-- [ ] Navigation bar
-- [ ] Sass Nesting
+- 로그인, 회원가입
+- Social Login 기능 구현
+- React Router를 이용한 페이지 이동 기능 구현
+- axios를 통해 백엔드와 통신 구현
+- Slick.js를 활용한 슬라이드 구현
+- 찜하기 기능
+- 로그인 여부 판별하여 기능 구분
+- 동영상 스트리밍 기능
+- 댓글 이미지 업로드 및 추가 삭제 기능
+- 마이페이지 정보 DB 연동
 
-## 작업순서
+## 정리
 
-1. `git branch feature/login` <- 항상 작업하기 전에 자신의 브랜치에서!
-2. `git pull origin master` 명령어로 최신 코드를 받아온다
-3. 코드를 작업한다. 최대한 기능별로 쪼개서 작업하기
-4. 프로젝트 상위 디렉토리로 가서 `git add .` 명령어로 내가 수정한 코드를 git stage 에 올린다
-5. `git status` add가 잘 되었는지 확인하기
-6. `git commit -m "commit message"` <- commit message는 팀원과 상의한 후에 slack 에 공유한다.
-7. `git push origin feature/jun` <- 본인 브랜치에서 작업한 내용을 원격 리포지토리에 올리기!
+- React Hooks와 함수형 컴포넌트를 사용해보며 라이프사이클에 대해 조금 더 이해할 수 있었다.
+- Hooks를 이용한 상태관리를 경험해봤는데 Redux의 필요성에 대해 느꼈다.
+- Agile 방법론을 적용하여 프로젝트를 진행해보니 왜 Agile 방법론에 대해 강조하는지 알게 되었다.
