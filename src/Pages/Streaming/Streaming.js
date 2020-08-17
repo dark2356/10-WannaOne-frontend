@@ -20,7 +20,6 @@ import {
   STREAMING_URL,
   STREAMING_COMMENT_URL,
   COMMENT_DELETE_URL,
-  MY_PAGE_PROFILE_API_URL
 } from "../../Config";
 import Nav from "../../Components/Nav/Nav";
 import FloatingBtn from "../../Components/Nav/FloatingBtn";
@@ -32,7 +31,6 @@ function Streaming() {
   const [classData, setClassData] = useState([]);
   const [files, setFiles] = useState([]);
   const [commentValue, setCommentValue] = useState("");
-  const [userInfo, setUserInfo] = useState({})
 
   useEffect(() => {
     axios.get(STREAMING_URL, {
@@ -48,21 +46,7 @@ function Streaming() {
       setCommentData(newCommentData);
       setClassData(res.data);
     });
-    getUserInfo()
   }, [commentData]);
-
-  const getUserInfo = () => {
-    fetch(`${MY_PAGE_PROFILE_API_URL}`, {
-      method: "GET",
-      headers: {
-        Authorization: localStorage.getItem("access_token")
-      }
-    })
-      .then(res => res.json())
-      .then(res => {
-        setUserInfo(res.data)
-      })
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -171,7 +155,7 @@ function Streaming() {
                   height="100%"
                   controls
                   autoPlay
-                ></video>
+                />
               </Video>
               <CommentBox>
                 <CommentTitle>
