@@ -76,12 +76,11 @@ export default class TitleSlide extends Component {
           >
             {data.map((datalist, index) => {
               return (
-                <div className="CarouselItemContainer">
+                <div className="CarouselItemContainer" key={index}>
                   <img
                     className="CarouselItemImg"
                     src={datalist.imgsrc}
                     alt="BottomSlide"
-                    key={index}
                   />
                 </div>
               );
